@@ -1,0 +1,218 @@
+<html><head>
+      <style type="text/css">
+      .page {
+        max-width: 677px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h1,h2 {
+        text-align: center;
+      }
+      .page img {
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+      .code-snippet__fix {
+        font-size: 14px;
+        margin: 10px 0;
+        display: block;
+        color: #333;
+        position: relative;
+        background-color: rgba(0,0,0,.03);
+        border: 1px solid #f0f0f0;
+        border-radius: 2px;
+        display: -ms-flexbox;
+        display: flex;
+        line-height: 26px;
+      }
+      .code-snippet__fix .code-snippet__line-index {
+          counter-reset: line;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          height: 100%;
+          padding: 1em;
+          list-style-type: none;
+      }
+      .code-snippet__fix .code-snippet__line-index li {
+          list-style-type: none;
+          text-align: right;
+      }
+      .code-snippet__fix .code-snippet__line-index li:before {
+        min-width: 1.5em;
+        text-align: right;
+        left: -2.5em;
+        counter-increment: line;
+        content: counter(line);
+        display: inline;
+        color: rgba(0,0,0,.15);
+      }
+      .code-snippet__fix pre {
+          overflow-x: auto;
+          padding: 1em 1em 1em 0;
+          white-space: normal;
+          -ms-flex: 1;
+          flex: 1;
+          -webkit-overflow-scrolling: touch;
+      }
+      .code-snippet__fix code {
+          text-align: left;
+          font-size: 14px;
+          display: block;
+          white-space: pre;
+          display: -ms-flexbox;
+          display: flex;
+          position: relative;
+          font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+      }
+      .music-div audio {
+        min-width: 300px;
+        width: 100%;
+        height: 30px;
+      }
+      .music-div {
+        display: flex;
+        background-color: #f1f3f4;
+        align-items: center;
+        padding: 8px 8px 8px 20px;
+        margin: 10px 0;
+      }
+      .audio-dev {
+        flex: 1;
+      }
+      .music_card_title {
+          font-size: 17px;
+          font-weight: 700;
+      }
+      .music_card_desc {
+        color: rgba(0,0,0,.5);
+          font-weight: 400;
+          font-size: 12px;
+          padding-top: 8px;
+          padding-right: 1.33333333em;
+      }
+      .foot {
+        background-color: #ededed;
+        padding: 8px;
+        display: none
+      }
+      .comment {
+        max-width: 677px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .comment .desc {
+        margin-bottom: 10px;
+      }
+      .comment-item {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      .comment-item img {
+        width: 30px;
+        margin-right: 8px;
+      }
+      .comment-item .nick-name {
+        color: #695e5ee3;
+        margin-right: 8px;
+        font-size: 14px;
+      }
+      .comment-item .native-place {
+        color: #9e9e9ed1;
+        font-size: 14px;
+      }
+      .comment-item .content {
+        padding-top: 5px;
+        white-space: pre-line;
+      }
+      .comment-item .more-reply {
+        margin-top: 10px;
+        color: #9e9e9ed1;
+      }
+      .comment-item .reply {
+        display: flex;
+        margin-top: 10px;
+      }
+      .comment-item .reply img {
+        width: 20px;
+        margin-right: 8px;
+      }
+      .dialog {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .dialog .dcontent {
+        width: 600px;
+        height: 90%;
+        margin: 2% auto auto auto;
+        background-color: #fefefe;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        padding-top: 35px;
+      }
+      .dialog .aclose {
+        text-align: left;
+        line-height: 25px;
+        padding: 5px 10px 0px 10px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: #ffffff;
+      }
+      .dialog .aclose span {
+        font-size: 14px;
+        color: #9e9e9ed1;
+      }
+      .dialog .close {
+        color: #898686;
+        float: right;
+        font-size: 30px;
+        text-decoration: none;
+      }
+      .dialog .contain {
+        height: 100%;
+        overflow: auto;
+        display: flex;
+        flex-flow: column;
+        border-radius: 5px;
+      }
+      .dialog .d-top {
+        padding: 0 20px;
+      }
+      .dialog .all-deply {
+        background-color: #f7f7f7;
+        padding: 10px 20px 0 20px;
+        height: 100%;
+      }
+      .dialog .all-deply .a-desc {
+        color: #898686;
+        margin-bottom: 10px;
+      }
+      .reply-nick {
+        color: #898686;
+        margin: 0 3px;
+      }
+      .meta-div {
+        margin-bottom: 10px;
+        color: #898686;
+      }
+      .meta-div span {
+        margin-right: 10px;
+      }
+      .meta-div .copyright-span {
+        background-color: #0000000d;
+        font-size: 14px;
+        padding: 2px;
+      }
+      </style>
+    </head><body><div id="readability-page-1" class="page"><h1>一些积极向上的信号</h1><div class="meta-div"><span class="copyright-span">原创 </span><span>作者:薯条闲聊 </span><span>公号:薯条闲聊 </span><span>发布时间:2024-11-23 14:00 </span><span>发表于浙江 </span></div><div>原文地址：<a href="https://mp.weixin.qq.com/s/3FH5527KvZqVFZsuymezqg" target="_blank">一些积极向上的信号</a></div><div class="rich_media_content js_underline_content
+                       autoTypeSetting24psection
+            " id="js_content"><section data-tool="mdx editor" data-website="https://editor.runjs.cool/"><blockquote data-line="1"><p data-line="1">一些积极向上的信号</p></blockquote><p data-line="3"><strong data-line="3">2025年起多放2天假</strong></p><ul data-line="9" class="list-paddingleft-1"><li><p data-line="5">2024年11月12日《全国年节及纪念日放假办法》规定2025年开始法定节日多两天，主要是农历除夕放假，就是春节多放假一天，从除夕到初三；5月2号多放假一天，即劳动节假期多增加一天；这里要注意，不单单是2025年这样，是从2025年开始都这样。</p></li><li><p data-line="7">米国那边大选一结束，我们这边就出招了，你肯定会问多放假有什么用？法定假日是所有企业必须执行的，多放假有三点好处：减少国内企业剩余产能，如果产能不够，自然不需要多放假；拉动国内消费，这个是为了对冲米国真的乱加关税的风险；减少无意义的内卷，增加老百姓的幸福感，如果放假期间被企业要求加班也有三倍工资，也是很不错的；没啥好怀疑的，此时多放假两天就是一举三得的好事。</p></li><li><p data-line="9">我国国民有个特点，就是未雨绸缪的偏向会比较重，所以人们储蓄的意愿是全球最高的，多保留现金能预防未来的不确定性，这样一来国内的消费水平自然是偏低的。一般消费水平占比GDP的比重大概60%比较合理，中国消费水平还可以进一步提高。</p></li></ul><figure><img class="rich_pages wxw-img" data-cropselx1="0" data-cropselx2="544" data-cropsely1="0" data-cropsely2="394" data-imgfileid="100000356" data-ratio="0.4546296296296296" data-src="https://mmbiz.qpic.cn/sz_mmbiz_png/uicuV1KdHTpXlgI1tTRWZPn25r8icP8gqm7ds9VsTz8Fib9J2ms3YrNEK2ga8BxuKNPg9BXQdGhLDNXV7JAiaGyDbw/640?wx_fmt=png&amp;from=appmsg" data-type="jpeg" data-w="1080" src="img/0.jpeg" width="578" tmpsrc="md/731eb5d2880a9cf207cebe0a2040fa3c/c732b18dd4c8d267013d469975dcefa0.jpeg"><figcaption>中美储蓄占比</figcaption></figure><figure><img class="rich_pages wxw-img" data-cropselx1="0" data-cropselx2="544" data-cropsely1="0" data-cropsely2="394" data-imgfileid="100000355" data-ratio="0.48703703703703705" data-src="https://mmbiz.qpic.cn/sz_mmbiz_png/uicuV1KdHTpXlgI1tTRWZPn25r8icP8gqmEcPCqllSsic7CBaaDYiaqbKUr3hZ3mBb3jDqKBVykQ1bPgNB13dsnyEw/640?wx_fmt=png&amp;from=appmsg" data-type="jpeg" data-w="1080" src="img/1.jpeg" tmpsrc="md/731eb5d2880a9cf207cebe0a2040fa3c/6c408ca857ee142163cae47e4730c252.jpeg"><figcaption>中美消费占比</figcaption></figure><p data-line="18"><strong data-line="18">基金降低费率</strong></p><ul data-line="22" class="list-paddingleft-1"><li><p data-line="20">2024年11月19日晚间，华夏、华泰柏瑞、易方达、嘉实、南方、华安等多家基金管理人官网公告，将调降旗下大型宽基ETF管理费率、托管费率。其中，管理费率统一调降至0.15%，托管费率统一调降至0.05%。以当前规模测算，每年可为投资者降低持有成本约50亿元。</p></li><li><p data-line="22">主要有两点作用：降低持有人的基金持有成本，不止是普通老百姓的持有成本哦，还有机构以及国家队的持有成本哦；吸引更多的资金入场买入基金，毕竟是降低费率了，一定程度上可以吸引更多观望的资金入场，其实也表明了队长对目前A股的看法；</p></li></ul><figure><img class="rich_pages wxw-img" data-cropselx1="0" data-cropselx2="544" data-cropsely1="0" data-cropsely2="394" data-imgfileid="100000359" data-ratio="0.34814814814814815" data-src="https://mmbiz.qpic.cn/sz_mmbiz_png/uicuV1KdHTpXlgI1tTRWZPn25r8icP8gqmibdHeyfnjOoV725s3jjSQSTQyd2xcREuQ9Tx7g31rFOmG41IicaR7UVA/640?wx_fmt=png&amp;from=appmsg" data-type="jpeg" data-w="1080" src="img/2.jpeg" width="578" tmpsrc="md/731eb5d2880a9cf207cebe0a2040fa3c/3920c90acbf3c75d7c96eedf229b6685.jpeg"><figcaption>国家队持有ETF基金</figcaption></figure><p data-line="27"><strong data-line="27">APEC东道主</strong></p><ul data-line="29" class="list-paddingleft-1"><li><p>2024年11月17号，中国获得2026年APEC主办权，将第三次担任东道主。APEC是亚太地区层级最高、领域最广、最具影响力的经济合作机制。这里说明一下APEC的东道主是轮流产生的，不是选出来的，基本上是1年举办一次。当东道主的好处有：展示本国的发展水平和经济实力，吸引更多的贸易合作；促进本国的中短期消费，毕竟办一个国家级别的大会议花钱是少不了的；提供成员国之间的交流，这里是非正式的友好交流；</p></li></ul><p data-line="31"><strong data-line="31">巴西G20峰会</strong></p><ul data-line="33" class="list-paddingleft-1"><li><p>2024年11月18日至11月19日，二十国集团领导人第十九次峰会在巴西里约热内卢举行，主题是“构建公正世界和可持续星球”。G20峰会是一个国际经济合作论坛。期间有两件事：第一件，我们在峰会上再次说明自2024年12月1日起，对原产于同中国建交的最不发达国家100%税目产品适用税率为零的特惠税率。这其实就是表态，各个发展中国家可以联合一起发展，完全没必要跟着发达国家的鼻子走；第二件，峰会期间美国现任领导人拜登和日本首相石破茂没有赶上拍大合照，并且其它国家领导人并没有要等他们一起拍照的意思，虽然后面重拍了合照哈哈哈。</p></li></ul><p data-line="35"><strong data-line="35">免签</strong></p><ul data-line="39" class="list-paddingleft-1"><li><p data-line="37">自2024年11月30日起至2025年12月31日，对保加利亚、罗马尼亚、克罗地亚、黑山、北马其顿、马耳他、爱沙尼亚、拉脱维亚、日本持普通护照人员试行免签政策。自2024年11月30日起，包括上述9国在内的38个免签国家持普通护照人员来华经商、旅游观光、探亲访友、交流访问、过境不超过30天，可免办签证入境。</p></li><li><p data-line="39">开放免签有啥意义，其实和当国际会议的东道主一样的道理，只不过免签是偏向普通人的，更多的是需要跨国的旅游人员和外派人员，而国际会议偏向的是各个国家的领导人。</p></li></ul><figure><img class="rich_pages wxw-img" data-cropselx1="0" data-cropselx2="544" data-cropsely1="0" data-cropsely2="394" data-imgfileid="100000358" data-ratio="0.5333333333333333" data-src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uicuV1KdHTpXlgI1tTRWZPn25r8icP8gqmc0kNILhrd11f8jYaBYJpGebzicHcgflibRWYQx0koPqlRLWNAxZXAKiaQ/640?wx_fmt=jpeg&amp;from=appmsg" data-type="jpeg" data-w="1080" src="img/3.jpeg" tmpsrc="md/731eb5d2880a9cf207cebe0a2040fa3c/02ec34336544891f160e85ff29097230.jpeg"><figcaption>目前的免签国家</figcaption></figure><p data-line="43"><strong data-line="43">一些积极向上的信号</strong></p><ul data-line="45" class="list-paddingleft-1"><li><p>上面都属于一些积极的信号，这个时候就没必要过分悲观，全球加息周期各个国家很难受，全球降息周期自然机会比较多，上面的举例也是侧面反应。我们能做的就是可以先埋伏，而不是等大涨后去接盘，还是保持大A长期震荡向上的看法，网格化交易，保持乐观。</p></li></ul><figure><img class="rich_pages wxw-img" data-cropselx1="0" data-cropselx2="544" data-cropsely1="0" data-cropsely2="394" data-imgfileid="100000357" data-ratio="1" data-src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uicuV1KdHTpX6ABP3HWHxfAn8Xt557ngbiahNZicVkKDrf9wpVB1Z8q2w6xbdbiaz5RQpf7ItBpLZibT2JJU2UX63dA/640?wx_fmt=jpeg&amp;from=appmsg" data-type="jpeg" data-w="258" src="img/4.jpeg" width="544" tmpsrc="md/731eb5d2880a9cf207cebe0a2040fa3c/0ab3fe1f1af542312a7a2a50687e7f01.jpeg"><figcaption>聊工作、副业、投资、补贴</figcaption></figure></section><p><br></p></div></div><div class="foot"></div><div class="dialog"><div class="dcontent"><div class="aclose"><span>留言</span><a class="close" href="javascript:closeDialog();">×</a></div><div class="contain"><div class="d-top"></div><div class="all-deply"></div></div></div></div></body></html>
