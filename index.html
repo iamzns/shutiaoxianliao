@@ -172,11 +172,12 @@
         // let backgroundImageUrl = 'https://bingwallpaperimages.azureedge.net/hpimages/Latest/3840x2400/20241017.jpg';
 
         // 根据formattedDate动态设置背景图片URL    
-        let backgroundImageUrlTemplate = 'https://bingwallpaperimages.azureedge.net/hpimages/Latest/3840x2400/{date}.jpg';
-        let backgroundImageUrl = backgroundImageUrlTemplate.replace('{date}', formattedDate);
+        //let backgroundImageUrlTemplate = 'https://bingwallpaperimages.azureedge.net/hpimages/Latest/3840x2400/{date}.jpg';
+        //let backgroundImageUrl = backgroundImageUrlTemplate.replace('{date}', formattedDate);
 
         // 设置body的背景图片样式  
-        body.style.backgroundImage = `url(${backgroundImageUrl})`;
+        //body.style.backgroundImage = `url(${backgroundImageUrl})`;
+        body.style.backgroundImage = `url(https://api.vvhan.com/api/bing)`;
 
         // 可选：设置背景图片的其他样式  
         body.style.backgroundSize = 'cover'; // 使背景图片覆盖整个body  
