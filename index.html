@@ -199,24 +199,24 @@
         //body.style.backgroundImage = `url(${backgroundImageUrl})`;
         //body.style.backgroundImage = `url(https://api.vvhan.com/api/bing)`;
 
-        $.ajax({
-            type: 'get',
-            url: 'https://raw.onmicrosoft.cn/Bing-Wallpaper-Action/main/data/zh-CN_all.json',
-            //数据可以写成字符串方式或对象方式，内部都转换成字符串方式
-            //data: 'username=zhangsan&password=123456&id=1',
-            // data: { "username": "zhangsan", "password": "123456", "id": "1" },
-            beforeSend: function () { },
-            success: function (res) {
-                console.log("https://cn.bing.com/" + JSON.parse(res).data[0].url);
-                body.style.backgroundImage = `url(${"https://cn.bing.com/" + JSON.parse(res).data[0].url})`;
-            },
-            error: function (err) {
-                console.log(err);
-            }
-        });
+        // $.ajax({
+        //     type: 'get',
+        //     url: 'https://raw.onmicrosoft.cn/Bing-Wallpaper-Action/main/data/zh-CN_all.json',
+        //     //数据可以写成字符串方式或对象方式，内部都转换成字符串方式
+        //     //data: 'username=zhangsan&password=123456&id=1',
+        //     // data: { "username": "zhangsan", "password": "123456", "id": "1" },
+        //     beforeSend: function () { },
+        //     success: function (res) {
+        //         console.log("https://cn.bing.com/" + JSON.parse(res).data[0].url);
+        //         body.style.backgroundImage = `url(${"https://cn.bing.com/" + JSON.parse(res).data[0].url})`;
+        //     },
+        //     error: function (err) {
+        //         console.log(err);
+        //     }
+        // });
 
 
-
+        body.style.backgroundImage = 'url(http://img.holytreasure.top/1920x1080.php)';
         // 可选：设置背景图片的其他样式  
         body.style.backgroundSize = 'cover'; // 使背景图片覆盖整个body  
         body.style.backgroundRepeat = 'no-repeat'; // 防止背景图片重复  
