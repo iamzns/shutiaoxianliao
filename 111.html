@@ -2,293 +2,185 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <!-- 1. 修改视口设置：强制竖屏，优化移动端竖屏显示 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, orientation=portrait">
-    <title>纯色背景文字生成器（竖屏版）</title>
+    <!-- 关键：移动端适配设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>手机文字展示页</title>
     <style>
+        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        /* 主体画布样式 - 改为竖屏比例（16:9），居中显示 */
-        body {
             font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-            /* 页面背景设为浅灰，突出竖屏画布 */
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        }
+
+        /* 黑色背景铺满屏幕 */
+        body {
+            background-color: #000;
             min-height: 100vh;
-            padding: 10px;
-        }
-        .canvas {
-            /* 竖屏核心：宽度适配屏幕，高度按16:9比例（竖屏标准） */
-            width: 100%;
-            max-width: 400px; /* 限制最大宽度，模拟手机竖屏 */
-            aspect-ratio: 9/16; /* 关键：设置竖屏宽高比 9:16 */
-            background-color: #000000;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            transition: background-color 0.3s ease;
-            margin: 0 auto; /* 水平居中 */
+            padding: 20px;
         }
 
-        /* 中间文字样式 - 适配竖屏，基于高度设置字体大小 */
-        .text-content {
-            font-size: 6vh; /* 改为基于视口高度，适配竖屏 */
-            max-font-size: 32px; /* 限制最大字体 */
-            color: #ff7f00;
-            text-align: center;
-            padding: 0 20px;
-            transition: color 0.3s ease;
-            word-break: break-all;
-        }
-
-        /* 控制面板样式 - 底部悬浮，适配手机 */
+        /* 控制区域样式 */
         .control-panel {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             width: 90%;
-            max-width: 400px;
+            max-width: 500px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
         }
 
-        /* 控制项布局 */
-        .control-item {
-            margin-bottom: 12px;
-        }
-        .control-item:last-child {
-            margin-bottom: 0;
-        }
-        label {
-            display: block;
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-        input[type="text"], input[type="color"] {
+        /* 输入框样式 */
+        #text-input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
+            padding: 15px;
+            border: 2px solid #333;
             border-radius: 8px;
-            font-size: 14px;
-        }
-        input[type="color"] {
-            height: 45px;
-            padding: 2px;
+            background-color: #111;
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            outline: none;
         }
 
-        /* 按钮组样式 */
-        .btn-group {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .preset-btn, .action-btn {
-            flex: 1;
-            padding: 10px;
+        /* 按钮样式 */
+        .btn {
+            padding: 12px 24px;
             border: none;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 6px;
+            font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.2s ease;
-            min-width: 80px;
+            margin: 0 8px 10px 0;
+            transition: background-color 0.2s;
         }
-        .preset-btn.active {
-            background-color: #ff7f00;
-            color: white;
+
+        /* 颜色选择按钮 */
+        .color-orange {
+            background-color: #ff7a00;
+            color: #fff;
         }
-        .bg-preset-btn {
-            background-color: #f0f0f0;
+        .color-orange:hover {
+            background-color: #ff9500;
         }
-        .bg-preset-btn:hover {
-            background-color: #e0e0e0;
+
+        .color-white {
+            background-color: #444;
+            color: #fff;
         }
-        .text-preset-btn {
-            background-color: #f0f0f0;
-        }
-        .text-preset-btn:hover {
-            background-color: #e0e0e0;
-        }
-        .action-btn {
-            background-color: #ff7f00;
-            color: white;
-        }
-        .action-btn:hover {
-            background-color: #e67200;
-        }
-        .reset-btn {
-            background-color: #666;
-            color: white;
-        }
-        .reset-btn:hover {
+        .color-white:hover {
             background-color: #555;
         }
 
-        /* 竖屏全屏样式适配 - 关键修改 */
-        :fullscreen .canvas {
-            /* 全屏时保持竖屏比例，居中显示 */
-            width: 100vh; /* 宽度取视口高度，强制竖屏 */
-            height: 100vw; /* 高度取视口宽度 */
-            max-width: none;
-            transform: rotate(90deg); /* 旋转90度，适配物理横屏的竖屏显示 */
-            transform-origin: center center;
+        /* 隐藏控件按钮 */
+        .hide-btn {
+            background-color: #666;
+            color: #fff;
         }
-        :-webkit-full-screen .canvas {
-            width: 100vh;
-            height: 100vw;
-            max-width: none;
-            transform: rotate(90deg);
-            transform-origin: center center;
+        .hide-btn:hover {
+            background-color: #777;
         }
-        :-moz-full-screen .canvas {
-            width: 100vh;
-            height: 100vw;
-            max-width: none;
-            transform: rotate(90deg);
-            transform-origin: center center;
+
+        /* 文字展示区域 */
+        .display-area {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
-        /* 全屏时隐藏控制面板 */
-        :fullscreen .control-panel,
-        :-webkit-full-screen .control-panel,
-        :-moz-full-screen .control-panel {
-            display: none;
+
+        /* 展示的文字样式 */
+        #display-text {
+            font-size: 24px;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 90%;
+            word-wrap: break-word;
+        }
+
+        /* 隐藏控件的类 */
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+            height: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* 橙色文字 */
+        .text-orange {
+            color: #ff7a00;
+        }
+
+        /* 白色文字 */
+        .text-white {
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <!-- 核心画布区域 -->
-    <div class="canvas" id="canvas">
-        <div class="text-content" id="textContent">请输入文字</div>
+    <!-- 控制区域：输入框 + 按钮 -->
+    <div class="control-panel" id="control-panel">
+        <input type="text" id="text-input" placeholder="请输入要显示的文字...">
+        <div>
+            <button class="btn color-orange" id="btn-orange">橙色文字</button>
+            <button class="btn color-white" id="btn-white">白色文字</button>
+            <button class="btn hide-btn" id="btn-hide">隐藏控件</button>
+        </div>
     </div>
 
-    <!-- 控制面板 -->
-    <div class="control-panel">
-        <!-- 文字输入 -->
-        <div class="control-item">
-            <label for="textInput">输入显示文字</label>
-            <input type="text" id="textInput" placeholder="请输入要显示的文字..." oninput="updateText()">
-        </div>
-
-        <!-- 背景颜色设置 -->
-        <div class="control-item">
-            <label>背景颜色</label>
-            <input type="color" id="bgColorPicker" value="#000000" onchange="changeBgColor()">
-            <div class="btn-group" style="margin-top: 8px;">
-                <button class="preset-btn bg-preset-btn" onclick="setPresetBg('#000000')">黑色</button>
-                <button class="preset-btn bg-preset-btn" onclick="setPresetBg('#ffffff')">白色</button>
-                <button class="preset-btn bg-preset-btn" onclick="setPresetBg('#ff0000')">红色</button>
-                <button class="preset-btn bg-preset-btn" onclick="setPresetBg('#00ff00')">绿色</button>
-            </div>
-        </div>
-
-        <!-- 文字颜色设置 -->
-        <div class="control-item">
-            <label>文字颜色</label>
-            <input type="color" id="textColorPicker" value="#ff7f00" onchange="changeTextColor()">
-            <div class="btn-group" style="margin-top: 8px;">
-                <button class="preset-btn text-preset-btn active" onclick="setPresetTextColor('#ff7f00')">橙色</button>
-                <button class="preset-btn text-preset-btn" onclick="setPresetTextColor('#ffffff')">白色</button>
-            </div>
-        </div>
-
-        <!-- 功能按钮 -->
-        <div class="control-item">
-            <div class="btn-group">
-                <button class="action-btn" onclick="toggleFullScreen()">竖屏全屏</button>
-                <button class="action-btn reset-btn" onclick="resetAll()">恢复默认</button>
-            </div>
-        </div>
+    <!-- 文字展示区域 -->
+    <div class="display-area">
+        <div id="display-text" class="text-white"></div>
     </div>
 
     <script>
-        // 获取核心元素
-        const canvas = document.getElementById('canvas');
-        const textContent = document.getElementById('textContent');
-        const textInput = document.getElementById('textInput');
-        const bgColorPicker = document.getElementById('bgColorPicker');
-        const textColorPicker = document.getElementById('textColorPicker');
-        const textPresetBtns = document.querySelectorAll('.text-preset-btn');
+        // 获取DOM元素
+        const textInput = document.getElementById('text-input');
+        const displayText = document.getElementById('display-text');
+        const btnOrange = document.getElementById('btn-orange');
+        const btnWhite = document.getElementById('btn-white');
+        const btnHide = document.getElementById('btn-hide');
+        const controlPanel = document.getElementById('control-panel');
 
-        // 更新显示文字
-        function updateText() {
-            const text = textInput.value.trim();
-            textContent.textContent = text || '请输入文字';
-        }
+        // 输入文字同步到展示区
+        textInput.addEventListener('input', function() {
+            displayText.textContent = this.value || '请输入文字...';
+        });
 
-        // 更改背景颜色（自定义选择器）
-        function changeBgColor() {
-            canvas.style.backgroundColor = bgColorPicker.value;
-        }
+        // 切换橙色文字
+        btnOrange.addEventListener('click', function() {
+            displayText.classList.remove('text-white');
+            displayText.classList.add('text-orange');
+        });
 
-        // 设置预设背景色
-        function setPresetBg(color) {
-            canvas.style.backgroundColor = color;
-            bgColorPicker.value = color;
-        }
+        // 切换白色文字
+        btnWhite.addEventListener('click', function() {
+            displayText.classList.remove('text-orange');
+            displayText.classList.add('text-white');
+        });
 
-        // 更改文字颜色（自定义选择器）
-        function changeTextColor() {
-            textContent.style.color = textColorPicker.value;
-            // 更新预设按钮激活状态
-            updateTextPresetActive();
-        }
-
-        // 设置预设文字颜色
-        function setPresetTextColor(color) {
-            textContent.style.color = color;
-            textColorPicker.value = color;
-            // 更新预设按钮激活状态
-            updateTextPresetActive();
-        }
-
-        // 更新文字预设按钮激活状态
-        function updateTextPresetActive() {
-            textPresetBtns.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.onclick.toString().includes(textColorPicker.value)) {
-                    btn.classList.add('active');
-                }
-            });
-        }
-
-        // 竖屏全屏/退出全屏切换
-        function toggleFullScreen() {
-            if (!document.fullscreenElement) {
-                // 进入全屏
-                canvas.requestFullscreen().catch(err => {
-                    alert(`竖屏全屏请求失败: ${err.message}`);
-                });
+        // 隐藏/显示控件
+        let isHidden = false;
+        btnHide.addEventListener('click', function() {
+            if (isHidden) {
+                // 显示控件
+                controlPanel.classList.remove('hidden');
+                this.textContent = '隐藏控件';
+                isHidden = false;
             } else {
-                // 退出全屏
-                document.exitFullscreen();
+                // 隐藏控件
+                controlPanel.classList.add('hidden');
+                this.textContent = '显示控件';
+                isHidden = true;
             }
-        }
+        });
 
-        // 恢复默认设置
-        function resetAll() {
-            // 重置背景
-            canvas.style.backgroundColor = '#000000';
-            bgColorPicker.value = '#000000';
-            // 重置文字
-            textContent.textContent = '请输入文字';
-            textInput.value = '';
-            // 重置文字颜色
-            textContent.style.color = '#ff7f00';
-            textColorPicker.value = '#ff7f00';
-            // 重置按钮激活状态
-            textPresetBtns.forEach(btn => btn.classList.remove('active'));
-            textPresetBtns[0].classList.add('active');
-        }
+        // 初始化展示文字
+        displayText.textContent = '请输入文字...';
     </script>
 </body>
 </html>
