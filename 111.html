@@ -14,6 +14,7 @@
         /* 主体画布样式 - 占满屏幕，居中文字 */
         body {
             font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            overflow: hidden; /* 防止滚动 */
         }
         .canvas {
             width: 100vw;
@@ -47,6 +48,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             width: 90%;
             max-width: 400px;
+            z-index: 10; /* 确保控制面板在最上层 */
         }
 
         /* 控制项布局 */
@@ -132,9 +134,54 @@
         :-moz-full-screen .control-panel {
             display: none;
         }
+
+        /* 新增：强制竖屏样式 */
+        .canvas.force-portrait {
+            transform: rotate(90deg);
+            transform-origin: center center;
+            width: 100vh;
+            height: 100vw;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -50vw; /* 垂直居中调整 */
+            margin-left: -50vh; /* 水平居中调整 */
+        }
+
+        /* 反向旋转文本内容，使其正立 */
+        .canvas.force-portrait .text-content {
+            transform: rotate(-90deg);
+        }
+
+        /* 横屏提示信息 */
+        .landscape-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            z-index: 100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .landscape-message.show {
+            display: flex;
+        }
     </style>
 </head>
 <body>
+    <!-- 横屏提示信息 -->
+    <div class="landscape-message" id="landscapeMessage">
+        <p>请将设备旋转到竖屏模式以获得最佳体验</p>
+    </div>
+
     <!-- 核心画布区域 -->
     <div class="canvas" id="canvas">
         <div class="text-content" id="textContent">请输入文字</div>
@@ -187,6 +234,7 @@
         const bgColorPicker = document.getElementById('bgColorPicker');
         const textColorPicker = document.getElementById('textColorPicker');
         const textPresetBtns = document.querySelectorAll('.text-preset-btn');
+        const landscapeMessage = document.getElementById('landscapeMessage');
 
         // 更新显示文字
         function updateText() {
@@ -224,24 +272,74 @@
         function updateTextPresetActive() {
             textPresetBtns.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.onclick.toString().includes(textColorPicker.value)) {
+                if (btn.onclick && btn.onclick.toString().includes(textColorPicker.value)) {
                     btn.classList.add('active');
                 }
             });
+        }
+
+        // 检测屏幕方向并调整布局[6,7](@ref)
+        function checkOrientation() {
+            const isFullScreen = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement;
+            
+            if (isFullScreen) {
+                // 全屏状态下检测方向
+                if (window.innerHeight <= window.innerWidth) {
+                    // 横屏状态：强制竖屏显示
+                    canvas.classList.add('force-portrait');
+                    landscapeMessage.classList.remove('show');
+                } else {
+                    // 竖屏状态：正常显示
+                    canvas.classList.remove('force-portrait');
+                    landscapeMessage.classList.remove('show');
+                }
+            } else {
+                // 非全屏状态：恢复正常显示
+                canvas.classList.remove('force-portrait');
+                
+                // 非全屏时如果是横屏，显示提示信息
+                if (window.innerHeight <= window.innerWidth) {
+                    landscapeMessage.classList.add('show');
+                } else {
+                    landscapeMessage.classList.remove('show');
+                }
+            }
         }
 
         // 全屏/退出全屏切换
         function toggleFullScreen() {
             if (!document.fullscreenElement) {
                 // 进入全屏
-                canvas.requestFullscreen().catch(err => {
-                    alert(`全屏请求失败: ${err.message}`);
-                });
+                const element = document.documentElement;
+                if (element.requestFullscreen) {
+                    element.requestFullscreen().catch(err => {
+                        alert(`全屏请求失败: ${err.message}`);
+                    });
+                } else if (element.webkitRequestFullscreen) {
+                    element.webkitRequestFullscreen();
+                } else if (element.mozRequestFullScreen) {
+                    element.mozRequestFullScreen();
+                }
             } else {
                 // 退出全屏
-                document.exitFullscreen();
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                }
             }
         }
+
+        // 监听全屏变化[4](@ref)
+        document.addEventListener('fullscreenchange', checkOrientation);
+        document.addEventListener('webkitfullscreenchange', checkOrientation);
+        document.addEventListener('mozfullscreenchange', checkOrientation);
+
+        // 监听屏幕方向变化[6](@ref)
+        window.addEventListener('resize', checkOrientation);
+        window.addEventListener('orientationchange', checkOrientation);
 
         // 恢复默认设置
         function resetAll() {
@@ -256,8 +354,13 @@
             textColorPicker.value = '#ff7f00';
             // 重置按钮激活状态
             textPresetBtns.forEach(btn => btn.classList.remove('active'));
-            textPresetBtns[0].classList.add('active');
+            if (textPresetBtns[0]) {
+                textPresetBtns[0].classList.add('active');
+            }
         }
+
+        // 初始化时检查方向
+        checkOrientation();
     </script>
 </body>
 </html>
