@@ -35,6 +35,13 @@
         <div class="modal-content">
             <h3>需要验证访问权限</h3>
             <p>您已滚动超过50%的内容，请输入访问密码继续浏览</p>
+            
+            <input type="text" class="password-input" id="passwordInput" placeholder="请输入4位密码" maxlength="4">
+            <div class="error-message" id="errorMessage"></div>
+            <button class="submit-btn" id="submitPassword">验证密码</button>
+            <p style="font-size: 0.9rem; color: #999; margin-top: 15px;">
+                忘记密码？请访问微信小程序【xxx】获取当日密码
+            </p>
 
             <!-- 微信小程序提示 -->
             <div class="weapp-tip">
@@ -43,13 +50,6 @@
                 <p>访问我们的微信小程序，在"每日密码"页面可以获取今天的访问密码</p>
                 <p style="font-size: 0.85rem; color: #999;">小程序名称：xxx</p>
             </div>
-
-            <input type="text" class="password-input" id="passwordInput" placeholder="请输入4位密码" maxlength="4">
-            <div class="error-message" id="errorMessage"></div>
-            <button class="submit-btn" id="submitPassword">验证密码</button>
-            <p style="font-size: 0.9rem; color: #999; margin-top: 15px;">
-                忘记密码？请访问微信小程序【xxx】获取当日密码
-            </p>
         </div>
     </div>
 
