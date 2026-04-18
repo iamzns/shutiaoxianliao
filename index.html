@@ -4,293 +4,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referer" content="no-referrer">
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="bookmark" href="./favicon.ico" />
-    <title>薯条闲聊</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            /* 水平居中 */
-            align-items: center;
-            /* 垂直居中（如果需要的话） */
-            height: 100vh;
-            /* 使body占满整个视口高度 */
-            margin: 0;
-            /* 移除默认的body边距 */
-            font-size: 18px;
-
-        }
-
-        .centered-div {
-            display: inline-block;
-            /* 使div自适应内容宽度 */
-            text-align: left;
-            /* 使div内的文本居中 */
-            padding: 10px;
-            /* 添加一些内边距（可选） */
-            /* border: 1px solid #000; */
-            /* 添加边框以更好地看到效果（可选） */
-            /* box-sizing: border-box; */
-            /* 包括内边距和边框在内计算宽度 */
-            /* background-color: #fff; */
-			background-color: rgba(255, 255, 255, 0.5); /* 白色半透明 */
-            border-radius: 10px;
-
-            max-height: 80vh;
-            /* 设定最大高度为视口高度的80% */
-            overflow-y: auto;
-            /* 启用垂直滚动条 */
-        }
-
-        /* 去掉a链接的下划线 */
-        a {
-            text-decoration: none;
-        }
-
-        /* 可选：为链接添加其他样式 */
-        a:link,
-        a:visited {
-            color: blue;
-            /* 设置链接的默认颜色 */
-        }
-
-        a:hover,
-        a:active {
-            color: red;
-            /* 设置链接在悬停和激活时的颜色 */
-        }
-    </style>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>薯条闲聊-投资知识库</title>
+    <meta name="description"
+        content="本网站主要记录了作者从开始投资到现在以来所有的投资笔记内容，内容也许不是最好的，但是却是最真实有用的，完全都是一字一句本人总结而来，如果对你很有用，十分欢迎。如果对内容不是很认同，有需要反馈的可以到公众号【薯条闲聊】反馈，十分感谢。不定期会更新，也许是一个月，也许是一年。">
+    <meta name="keywords" content="薯条闲聊, 投资知识库, 投资笔记">
+    <meta name="author" content="薯条闲聊">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://asimpleme.tech/">
+    <meta property="og:title" content="薯条闲聊-投资知识库">
+    <meta property="og:description"
+        content="本网站主要记录了作者从开始投资到现在以来所有的投资笔记内容，内容也许不是最好的，但是却是最真实有用的，完全都是一字一句本人总结而来，如果对你很有用，十分欢迎。如果对内容不是很认同，有需要反馈的可以到公众号【薯条闲聊】反馈，十分感谢。不定期会更新，也许是一个月，也许是一年。">
+    <meta property="og:image" content="https://asimpleme.tech/favicon.ico">
+    <meta property="og:url" content="https://asimpleme.tech/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="薯条闲聊-投资知识库">
+    <meta name="twitter:description"
+        content="本网站主要记录了作者从开始投资到现在以来所有的投资笔记内容，内容也许不是最好的，但是却是最真实有用的，完全都是一字一句本人总结而来，如果对你很有用，十分欢迎。如果对内容不是很认同，有需要反馈的可以到公众号【薯条闲聊】反馈，十分感谢。不定期会更新，也许是一个月，也许是一年。">
+    <meta name="twitter:image" content="https://asimpleme.tech/favicon.ico">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-    <div class="centered-div">
-	
-	
-	
-        <a href="./[20251230]绿电行业分析.html" target="_blank">[20251230]绿电行业分析</a>
-        <br>
-        <a href="./[20251223]城市抢人大战补贴和定居选择.html" target="_blank">[20251223]城市抢人大战补贴和定居选择</a>
-        <br>
-        <a href="./[20251220]综合国力和货币走势.html" target="_blank">[20251220]综合国力和货币走势</a>
-        <br>
-        <a href="./[20251214]白酒闲聊.html" target="_blank">[20251214]白酒闲聊</a>
-        <br>
-        <a href="./[20251212]消费还行不行.html" target="_blank">[20251212]消费还行不行</a>
-        <br>
-        <a href="./[20251207]社会主义市场经济.html" target="_blank">[20251207]社会主义市场经济</a>
-        <br>
-        <a href="./[20251204]2026年的A股跨年行情值得期待.html" target="_blank">[20251204]2026年的A股跨年行情值得期待</a>
-        <br>
-        <a href="./[20251123]宏观经济指标和三大宏观周期.html" target="_blank">[20251123]宏观经济指标和三大宏观周期</a>
-        <br>
-        <a href="./[20251115]26年灰犀牛和27年黑天鹅.html" target="_blank">[20251115]26年灰犀牛和27年黑天鹅</a>
-        <br>
-        <a href="./[20251025]十五五规划最重要的五年.html" target="_blank">[20251025]十五五规划最重要的五年</a>
-        <br>
-        <a href="./[20251019]大A目前看跌.html" target="_blank">[20251019]大A目前看跌</a>
-        <br>
-        <a href="./[20251008]金融危机大类资产表现.html" target="_blank">[20251008]金融危机大类资产表现</a>
-        <br>
-        <a href="./[20251007]金融危机买日元.html" target="_blank">[20251007]金融危机买日元</a>
-        <br>
-        <a href="./[20251004]高市早苗无法阻止日元升值.html" target="_blank">[20251004]高市早苗无法阻止日元升值</a>
-        <br>
-        <a href="./[20250926]CPI央妈消费行业.html" target="_blank">[20250926]CPI央妈消费行业</a>
-        <br>
-        <a href="./[20250916]世界央行美联储.html" target="_blank">[20250916]世界央行美联储</a>
-        <br>
-        <a href="./[20250913]闲聊几件事.html" target="_blank">[20250913]闲聊几件事</a>
-        <br>
-        <a href="./[20250821]牛来了还是牛走了.html" target="_blank">[20250821]牛来了还是牛走了</a>
-        <br>
-        <a href="./[20250815]存款搬家和A股.html" target="_blank">[20250815]存款搬家和A股</a>
-        <br>
-        <a href="./[20250812]菲律宾为什么喜欢在南海闹事.html" target="_blank">[20250812]菲律宾为什么喜欢在南海闹事</a>
-        <br>
-        <a href="./[20250809]中房未来.html" target="_blank">[20250809]中房未来</a>
-        <br>
-        <a href="./[20250802]中国规划体系和墨脱水电站.html" target="_blank">[20250802]中国规划体系和墨脱水电站</a>
-        <br>
-        <a href="./[20250726]石油才是经济好坏的晴雨表.html" target="_blank">[20250726]石油才是经济好坏的晴雨表</a>
-        <br>
-        <a href="./[20250720]工业大国和用电.html" target="_blank">[20250720]工业大国和用电</a>
-        <br>
-        <a href="./[20250715]日债要炸.html" target="_blank">[20250715]日债要炸</a>
-        <br>
-        <a href="./[20250712]为什么不买房.html" target="_blank">[20250712]为什么不买房</a>
-        <br>
-        <a href="./[20250625]中东势力现状.html" target="_blank">[20250625]中东势力现状</a>
-        <br>
-        <a href="./[20250607]外资动向观察.html" target="_blank">[20250607]外资动向观察</a>
-        <br>
-        <a href="./[20250531]稳定币闲聊.html" target="_blank">[20250531]稳定币闲聊</a>
-        <br>
-        <a href="./[20250512]中美的中场休息时间.html" target="_blank">[20250512]中美的中场休息时间</a>
-        <br>
-        <a href="./[20250506]新广场协议之美元主动贬值猜想.html" target="_blank">[20250506]新广场协议之美元主动贬值猜想</a>
-        <br>
-        <a href="./[20250410]东大底气来源哪里.html" target="_blank">[20250410]东大底气来源哪里</a>
-        <br>
-        <a href="./[20250408]中美决赛期.html" target="_blank">[20250408]中美决赛期</a>
-        <br>
-        <a href="./[20250405]日本金融发展时间线.html" target="_blank">[20250405]日本金融发展时间线</a>
-        <br>
-        <a href="./[20250403]特朗普关税牌的影响.html" target="_blank">[20250403]特朗普关税牌的影响</a>
-        <br>
-        <a href="./[20250308]该出手时就出手.html" target="_blank">[20250308]该出手时就出手</a>
-        <br>
-        <a href="./[20250302]乌克兰欧洲俄罗斯美国关系网.html" target="_blank">[20250302]乌克兰欧洲俄罗斯美国关系网</a>
-        <br>
-        <a href="./[20250215]再提一下医疗行业.html" target="_blank">[20250215]再提一下医疗行业</a>
-        <br>
-        <a href="./[20250208]老鹰没钱兔子反击.html" target="_blank">[20250208]老鹰没钱兔子反击</a>
-        <br>
-        <a href="./[20250202]如何找在线理财书籍政府.html" target="_blank">[20250202]如何找在线理财书籍政府</a>
-        <br>
-        <a href="./[20250123]各方对特朗普上台的反应.html" target="_blank">[20250123]各方对特朗普上台的反应</a>
-        <br>
-        <a href="./[20250122]美国霸权闲聊军事科技舆论金融.html" target="_blank">[20250122]美国霸权闲聊军事科技舆论金融</a>
-        <br>
-        <a href="./[20250101]2025年资产配置.html" target="_blank">[20250101]2025年资产配置</a>
-        <br>
-        <a href="./[20241214]这个阶段需要保持乐观.html" target="_blank">[20241214]这个阶段需要保持乐观</a>
-        <br>
-        <a href="./[20241203]黄金美元日元A股人民币和机会.html" target="_blank">[20241203]黄金美元日元A股人民币和机会</a>
-        <br>
-        <a href="./[20241130]黎明前的黑暗和市场底.html" target="_blank">[20241130]黎明前的黑暗和市场底</a>
-        <br>
-        <a href="./[20241123]一些积极向上的信号.html" target="_blank">[20241123]一些积极向上的信号</a>
-        <br>
-        <a href="./[20241116]特朗普上台后的影响和机会.html" target="_blank">[20241116]特朗普上台后的影响和机会</a>
-        <br>
-        <a href="./[20241108]巴菲特特朗普兔子财政政策.html" target="_blank">[20241108]巴菲特特朗普兔子财政政策</a>
-        <br>
-        <a href="./[20241028]兔子要大力出奇迹了.html" target="_blank">[20241028]兔子要大力出奇迹了</a>
-        <br>
-        <a href="./[20241021]哈里斯获胜希望渺茫.html" target="_blank">[20241021]哈里斯获胜希望渺茫</a>
-        <br>
-        <a href="./[20241018]三季度GDP略超预期分短期和长期来看.html" target="_blank">[20241018]三季度GDP略超预期分短期和长期来看</a>
-        <br>
-        <a href="./[20241012]A股长期震荡向上.html" target="_blank">[20241012]A股长期震荡向上</a>
-        <br>
-        <a href="./[20241010]股市见顶量能计算.html" target="_blank">[20241010]股市见顶量能计算</a>
-        <br>
-        <a href="./[20241009]正确的投资观念.html" target="_blank">[20241009]正确的投资观念</a>
-        <br>
-        <a href="./[20241008]A股什么时候跑.html" target="_blank">[20241008]A股什么时候跑</a>
-        <br>
-        <a href="./[20241006]这次A股会涨到哪里.html" target="_blank">[20241006]这次A股会涨到哪里</a>
-        <br>
-        <a href="./[20240930]以色列美国大选A股.html" target="_blank">[20240930]以色列美国大选A股</a>
-        <br>
-        <a href="./[20240929]石破茂和日元.html" target="_blank">[20240929]石破茂和日元</a>
-        <br>
-        <a href="./[20240928]国庆后A股怎么走.html" target="_blank">[20240928]国庆后A股怎么走</a>
-        <br>
-        <a href="./[20240927]从炒股交易方式到信息传播变化对A股的影响.html" target="_blank">[20240927]从炒股交易方式到信息传播变化对A股的影响</a>
-        <br>
-        <a href="./[20240925]央妈态度变化沪深300反弹机会.html" target="_blank">[20240925]央妈态度变化沪深300反弹机会</a>
-        <br>
-        <a href="./[20240924]沪深300反弹机会确认.html" target="_blank">[20240924]沪深300反弹机会确认</a>
-        <br>
-        <a href="./[20240919]美联储降息50个基点的影响.html" target="_blank">[20240919]美联储降息50个基点的影响</a>
-        <br>
-        <a href="./[20240911]医药行业何时止跌.html" target="_blank">[20240911]医药行业何时止跌</a>
-        <br>
-        <a href="./[20240909]沪深300的机会来了.html" target="_blank">[20240909]沪深300的机会来了</a>
-        <br>
-        <a href="./[20240905]美林时钟和原油的联系.html" target="_blank">[20240905]美林时钟和原油的联系</a>
-        <br>
-        <a href="./[20240903]投资种类有哪些普通人投资啥好.html" target="_blank">[20240903]投资种类有哪些普通人投资啥好</a>
-        <br>
-        <a href="./[20240822]美股美债和美元救哪个.html" target="_blank">[20240822]美股美债和美元救哪个</a>
-        <br>
-        <a href="./[20240804]2025年AI泡沫破裂.html" target="_blank">[20240804]2025年AI泡沫破裂</a>
-        <br>
-        <a href="./[20240803]这次日元会升值到什么时候.html" target="_blank">[20240803]这次日元会升值到什么时候</a>
-        <br>
-        <a href="./[20240731]美股不行了快跑吧.html" target="_blank">[20240731]美股不行了快跑吧</a>
-        <br>
-        <a href="./[20240717]特朗普上台后投资啥好.html" target="_blank">[20240717]特朗普上台后投资啥好</a>
-        <br>
-        <a href="./[20240714]稳健理财之债基.html" target="_blank">[20240714]稳健理财之债基</a>
-        <br>
-        <a href="./[20240623]从租房经历聊投资机会.html" target="_blank">[20240623]从租房经历聊投资机会</a>
-        <br>
-        <a href="./[20240525]如果你是日本央行如何让日元升值.html" target="_blank">[20240525]如果你是日本央行如何让日元升值</a>
-        <br>
-        <a href="./[20240524]佛山顺德北郊公园是个不错的买房地点.html" target="_blank">[20240524]佛山顺德北郊公园是个不错的买房地点</a>
+    <!-- 滚动进度条 -->
+    <div class="progress-bar" id="progressBar"></div>
 
+    <!-- 密码弹窗 -->
+    <div class="password-modal" id="passwordModal">
+        <div class="modal-content">
+            <h3>需要验证访问权限</h3>
+            <p>您已滚动超过50%的内容，请输入访问密码继续浏览</p>
 
+            <!-- 微信小程序提示 -->
+            <div class="weapp-tip">
+                <div class="weapp-icon">微</div>
+                <h4>微信小程序获取密码</h4>
+                <p>访问我们的微信小程序，在"每日密码"页面可以获取今天的访问密码</p>
+                <p style="font-size: 0.85rem; color: #999;">小程序名称：xxx</p>
+            </div>
+
+            <input type="text" class="password-input" id="passwordInput" placeholder="请输入4位密码" maxlength="4">
+            <div class="error-message" id="errorMessage"></div>
+            <button class="submit-btn" id="submitPassword">验证密码</button>
+            <p style="font-size: 0.9rem; color: #999; margin-top: 15px;">
+                忘记密码？请访问微信小程序【xxx】获取当日密码
+            </p>
+        </div>
     </div>
 
-    <!-- JavaScript代码 -->
-    <script>
+    <div class="scroll-indicator"></div>
 
-        // 获取当前时间  
-        let currentDate = new Date();
+    <header>
+        <div class="container">
+            <h1>薯条闲聊-投资知识库</h1>
+            <p class="subtitle">
+                本网站主要记录了作者从开始投资到现在以来所有的投资笔记内容，内容也许不是最好的，但是却是最真实有用的，完全都是一字一句本人总结而来，如果对你很有用，十分欢迎。如果对内容不是很认同，有需要反馈的可以到公众号【薯条闲聊】反馈，十分感谢。不定期会更新，也许是一个月，也许是一年。
+            </p>
+        </div>
+    </header>
 
-        // 获取当前时间的年、月、日  
-        let year = currentDate.getFullYear();
-        let month = currentDate.getMonth() + 1; // 月份从0开始，需要加1  
-        let day = currentDate.getDate();
+    <div class="container">
+        <section class="section">
+            <h2>第一章：技术的演进</h2>
+            <p>在过去的几十年里，技术以前所未有的速度发展。从最初的大型计算机到如今的智能手机，从简单的文本界面到虚拟现实，技术的进步彻底改变了我们的生活方式。每一次技术突破都为我们打开了新的可能性，让我们能够解决以前无法解决的问题。
+            </p>
+            <p>计算机科学的奠基人艾伦·图灵曾预言机器能够模拟人类智能，他的思想为人工智能领域奠定了基础。如今，我们看到的自动驾驶汽车、智能语音助手和个性化推荐系统，都是图灵理念的延伸与实践。</p>
+            <div class="image-placeholder">
+                技术演进示意图
+            </div>
+            <p>云计算的出现使得计算资源变得像水电一样易于获取，小型创业公司现在可以访问与大型企业相同的基础设施。这种民主化的计算能力推动了创新，降低了技术门槛，使更多人能够将想法变为现实。</p>
+        </section>
 
-        // 计算前一天的日期（注意：如果当前是1月1日，前一天是上一年的12月31日）  
-        let previousDate = new Date(currentDate);
-        previousDate.setDate(previousDate.getDate() - 1);
+        <section class="section">
+            <h2>第二章：数字时代的变革</h2>
+            <p>互联网的普及连接了全球各地的人们，打破了地理界限，创造了全新的沟通和协作方式。社交媒体、即时通讯和在线协作工具使我们能够与世界各地的人实时交流，分享想法和经验。</p>
+            <div class="quote">
+                "我们正处于一场数字革命之中，这场革命正在改变我们工作、学习和互动的方式。"
+                <div class="author">- 数字未来学家，萨拉·陈</div>
+            </div>
+            <p>远程工作成为可能，许多人现在可以在家中或任何有互联网连接的地方完成工作。这种灵活性为工作与生活的平衡提供了新的可能性，但也带来了新的挑战，如如何保持团队凝聚力和防止职业倦怠。</p>
+            <p>教育领域也经历了深刻的变革。在线学习平台使人们能够按照自己的节奏学习，获取来自世界顶尖大学的课程。这种教育民主化正在帮助缩小知识差距，为更多人提供学习机会。</p>
+        </section>
 
-        // 获取前一天的年、月、日  
-        let prevYear = previousDate.getFullYear();
-        let prevMonth = String(previousDate.getMonth() + 1).padStart(2, '0'); // 月份补零  
-        let prevDay = String(previousDate.getDate()).padStart(2, '0'); // 日期补零  
+        <section class="section">
+            <h2>第三章：可持续发展的挑战</h2>
+            <p>随着全球人口增长和经济发展，可持续发展成为我们面临的最重要挑战之一。气候变化、资源枯竭和生物多样性丧失等问题需要我们采取紧急行动。</p>
+            <div class="image-placeholder">
+                可持续发展概念图
+            </div>
+            <p>可再生能源技术，如太阳能和风能，正变得越来越高效和经济实惠。许多国家正在逐步淘汰化石燃料，转向更清洁的能源来源。这种转变不仅有助于减少温室气体排放，还能创造新的就业机会和经济增长点。</p>
+            <p>循环经济理念强调减少浪费和最大化资源利用。通过设计可重复使用、可修复和可回收的产品，我们可以减少对原始资源的依赖，降低环境影响。</p>
+        </section>
 
-        // 格式化为YYYYMMDD字符串  
-        let formattedDate = `${prevYear}${prevMonth}${prevDay}`;
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">78%</span>
+                <span class="stat-label">全球互联网普及率</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2.5万亿</span>
+                <span class="stat-label">每日数据产生量(GB)</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">120亿</span>
+                <span class="stat-label">已连接设备数量</span>
+            </div>
+        </div>
 
-        console.log(formattedDate); // 输出格式化后的日期，例如：20241016（假设当前日期是2024年10月17日）
+        <section class="section">
+            <h2>第四章：人工智能的未来</h2>
+            <p>人工智能正在从专门任务工具转变为通用智能系统。深度学习、自然语言处理和计算机视觉的进步使AI系统能够执行越来越复杂的任务，从医学图像分析到创作艺术作品。</p>
+            <p>然而，随着AI能力的增强，伦理问题变得越来越重要。我们需要确保AI系统公平、透明且符合人类价值观。算法偏见、隐私保护和就业影响等问题需要认真考虑和解决。</p>
+            <div class="image-placeholder">
+                人工智能应用场景
+            </div>
+            <p>AI在医疗保健领域的应用尤其令人兴奋。从早期疾病检测到个性化治疗计划，AI有潜力显著改善医疗结果并降低成本。在药物发现方面，AI可以加速新药开发过程，帮助应对新的健康威胁。</p>
+        </section>
 
+        <section class="section">
+            <h2>第五章：空间探索的新时代</h2>
+            <p>商业太空公司的发展使空间探索变得更加可及和经济实惠。可重复使用火箭技术显著降低了发射成本，为更多组织和国家进入太空打开了大门。</p>
+            <p>月球和火星任务正在从政府项目扩展到商业合作。多国合作的月球基地计划和私营公司的火星殖民愿景展示了人类对探索宇宙的持续渴望。</p>
+            <div class="quote">
+                "我们选择探索太空，不是因为它容易，而是因为它困难。"
+                <div class="author">- 约翰·F·肯尼迪</div>
+            </div>
+            <p>太空技术不仅推动探索，还为地球带来了实际好处。卫星通信、地球观测和微重力研究为天气预报、灾害管理和新材料开发等领域做出了贡献。</p>
+        </section>
 
-        // 获取body元素  
-        let body = document.body;
+        <section class="section">
+            <h2>第六章：生物技术的突破</h2>
+            <p>基因编辑技术CRISPR-Cas9的发展使科学家能够精确修改DNA序列，为治疗遗传疾病创造了新的可能性。这项技术不仅可用于人类健康，还可用于农业，创造更具抗病性和高产量的作物。</p>
+            <p>合成生物学领域正在设计新的生物系统和有机体，用于生产药物、生物燃料和材料。这种方法有可能彻底改变制造业，创造更可持续的生产方法。</p>
+            <div class="image-placeholder">
+                基因编辑技术示意图
+            </div>
+            <p>个性化医疗正变得越来越现实。通过分析个人的基因组、蛋白质组和其他生物标志物，医生可以为患者量身定制治疗方案，提高疗效并减少副作用。</p>
+        </section>
 
-        // 设置背景图片URL  
-        // let backgroundImageUrl = 'https://bingwallpaperimages.azureedge.net/hpimages/Latest/3840x2400/20241017.jpg';
+        <section class="section">
+            <h2>第七章：虚拟与现实的融合</h2>
+            <p>增强现实(AR)和虚拟现实(VR)技术正在模糊物理世界和数字世界之间的界限。从娱乐和游戏到教育和培训，这些技术为用户提供了沉浸式体验。</p>
+            <p>元宇宙概念设想了一个持久的、共享的虚拟空间，人们可以在其中工作、社交和娱乐。虽然仍处于早期阶段，但这一概念展示了数字互动的未来可能性。</p>
+            <p>在企业环境中，VR和AR被用于培训、产品设计和远程协作。这些技术可以帮助员工在安全的环境中练习危险任务，或使设计师能够在产品制造前可视化产品。</p>
+        </section>
 
-        // 根据formattedDate动态设置背景图片URL    
-        //let backgroundImageUrlTemplate = 'https://bingwallpaperimages.azureedge.net/hpimages/Latest/3840x2400/{date}.jpg';
-        //let backgroundImageUrl = backgroundImageUrlTemplate.replace('{date}', formattedDate);
+        <section class="section">
+            <h2>第八章：未来的挑战与机遇</h2>
+            <p>随着技术加速发展，我们面临着一系列复杂的挑战。数字鸿沟、网络安全威胁、自动化对就业的影响以及技术治理都需要全球合作和深思熟虑的政策应对。</p>
+            <p>与此同时，技术为解决一些最紧迫的全球问题提供了工具。从气候变化到公共卫生危机，技术创新可以帮助我们开发解决方案，创造更可持续、公平的未来。</p>
+            <div class="image-placeholder">
+                未来城市概念图
+            </div>
+            <p>成功驾驭未来需要跨学科合作、持续学习和适应性思维。通过将技术创新与人文价值观相结合，我们可以创造一个既先进又人性化的未来。</p>
+            <p>教育系统需要发展，以培养未来所需的能力，如批判性思维、创造力和数字素养。终身学习将成为常态，因为个人需要不断更新技能以适应快速变化的工作环境。</p>
+        </section>
 
-        // 设置body的背景图片样式  
-        //body.style.backgroundImage = `url(${backgroundImageUrl})`;
-        //body.style.backgroundImage = `url(https://api.vvhan.com/api/bing)`;
+        <section class="section">
+            <h2>第九章：密码验证功能说明</h2>
+            <p>当您滚动到页面50%的位置时，会触发密码验证机制。这是为了演示如何在滚动到特定位置时添加交互功能。</p>
+        </section>
 
-        // $.ajax({
-        //     type: 'get',
-        //     url: 'https://raw.onmicrosoft.cn/Bing-Wallpaper-Action/main/data/zh-CN_all.json',
-        //     //数据可以写成字符串方式或对象方式，内部都转换成字符串方式
-        //     //data: 'username=zhangsan&password=123456&id=1',
-        //     // data: { "username": "zhangsan", "password": "123456", "id": "1" },
-        //     beforeSend: function () { },
-        //     success: function (res) {
-        //         console.log("https://cn.bing.com/" + JSON.parse(res).data[0].url);
-        //         body.style.backgroundImage = `url(${"https://cn.bing.com/" + JSON.parse(res).data[0].url})`;
-        //     },
-        //     error: function (err) {
-        //         console.log(err);
-        //     }
-        // });
+        <section class="section">
+            <h2>第十章：滚动检测技术</h2>
+            <p>本页面使用了JavaScript的滚动事件监听器来检测用户的滚动位置。当滚动超过页面高度的50%时，会触发密码验证弹窗。</p>
+            <p>滚动位置的计算基于文档的总高度、当前滚动位置和视窗高度。通过比较这些值，我们可以确定用户已经滚动了多少百分比的内容。</p>
+            <p>为了提高性能，滚动事件使用了节流技术，避免在快速滚动时过多的计算。</p>
+            <p>密码验证通过后，页面会恢复正常滚动，并且不会再次触发验证，直到页面刷新。</p>
+        </section>
+    </div>
 
+    <footer>
+        <div class="container">
+            <p>公众号【薯条闲聊】</p>
+            <p>十分感谢花时间阅读完成，希望对你有用。</p>
+        </div>
+    </footer>
 
-        // body.style.backgroundImage = 'url(https://api.timelessq.com/bing/random)';
-        body.style.backgroundImage = 'url(https://bing.img.run/rand.php)';
-        // 可选：设置背景图片的其他样式  
-        body.style.backgroundSize = 'cover'; // 使背景图片覆盖整个body  
-        body.style.backgroundRepeat = 'no-repeat'; // 防止背景图片重复  
-        body.style.backgroundPosition = 'center'; // 将背景图片居中  
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
