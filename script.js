@@ -1,45 +1,29 @@
 
 // MD5加密函数（简化版，仅用于演示）
 function md5(input) {
-    // 简单模拟MD5函数，实际应用中应该使用完整的MD5算法
-    // 这里为了演示，我们使用一个简化的版本
-    // 注意：这只是一个模拟函数，实际MD5算法要复杂得多
-    // 在实际项目中，建议使用成熟的MD5库，如crypto-js
-    function simpleMD5(str) {
-        // 这是一个简化的模拟函数，仅用于演示
-        // 实际MD5算法包括复杂的位操作和循环
-        // 这里我们使用一个简单的哈希函数来模拟
-        let hash = 0;
-        for (let i = 0; i < str.length; i++) {
-            const char = str.charCodeAt(i);
-            hash = ((hash << 5) - hash) + char;
-            hash = hash & hash; // 转换为32位整数
-        }
+ 
 
-        // 转换为16进制字符串
-        let result = (hash >>> 0).toString(16);
+    // 获取当前日期并格式化为YYYYMMDD
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    var dateStr = `${year}${month}${day}`; // 格式：YYYYMMDD
 
-        // 确保是32位（8个16进制字符）
-        while (result.length < 8) {
-            result = '0' + result;
-        }
+    console.log(dateStr);
 
-        return result;
-    }
 
-    // 对于本演示，我们使用一个更简单的模拟：
-    // 实际密码生成逻辑：取当天日期，计算简单哈希，取前4位
-    const today = new Date();
-    const dateString = today.getFullYear() +
-        String(today.getMonth() + 1).padStart(2, '0') +
-        String(today.getDate()).padStart(2, '0');
+    
+    // 使用 MD5 算法对字符串进行哈希计算
+    // MD5 是一种哈希算法，生成 32 位的十六进制字符串
+    var md5str = CryptoJS.MD5(dateStr).toString();
 
-    // 在实际应用中，这里应该使用完整的MD5算法
-    // 但为了简化演示，我们使用一个简单的哈希
-    const hash = simpleMD5(dateString);
+    // 取前4位
+    const result = md5str.substring(0, 4);
+    console.log(result);
+    return result;
 
-    // 返回前4个字符
-    return hash.substring(0, 4).toLowerCase();
+
 }
 
 // 获取今天的密码
