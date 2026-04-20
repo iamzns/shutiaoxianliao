@@ -23,167 +23,86 @@
         content="本网站主要记录了作者从开始投资到现在以来所有的投资笔记内容，内容也许不是最好的，但是却是最真实有用的，完全都是一字一句本人总结而来，如果对你很有用，十分欢迎。如果对内容不是很认同，有需要反馈的可以到公众号【薯条闲聊】反馈，十分感谢。不定期会更新，也许是一个月，也许是一年。">
     <meta name="twitter:image" content="https://asimpleme.tech/favicon.ico">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./styles.css">
+    <!-- 引入CryptoJS库用于MD5加密 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-    <!-- 滚动进度条 -->
-    <div class="progress-bar" id="progressBar"></div>
-
     <!-- 密码弹窗 -->
     <div class="password-modal" id="passwordModal">
         <div class="modal-content">
             <h3>需要验证访问权限</h3>
             <p>您已滚动超过50%的内容，请输入访问密码继续浏览</p>
-            
+
             <input type="text" class="password-input" id="passwordInput" placeholder="请输入4位密码" maxlength="4">
             <div class="error-message" id="errorMessage"></div>
             <button class="submit-btn" id="submitPassword">验证密码</button>
-            <!-- <p style="font-size: 0.9rem; color: #999; margin-top: 15px;">
-                忘记密码？请访问微信小程序【xxx】获取当日密码
-            </p> -->
 
             <!-- 微信小程序提示 -->
             <div class="weapp-tip">
-                <!-- <div class="weapp-icon">微</div>
-                <h4>微信小程序获取密码</h4> -->
                 <img src="./wechat-qrcode2.jpg" alt="薯条闲聊公众号二维码">
                 <p>访问我们的微信小程序，获取【今日密码】</p>
-                <!-- <p style="font-size: 0.85rem; color: #999;">小程序名称：xxx</p> -->
             </div>
         </div>
     </div>
 
-    <div class="scroll-indicator"></div>
-
-    <header>
-        <div class="container">
-            <h1>薯条闲聊-投资知识库</h1>
-            <p class="subtitle">
-                本网站主要记录了作者从开始投资到现在以来所有的投资笔记内容，内容也许不是最好的，但是却是最真实有用的，完全都是一字一句本人总结而来，如果对你很有用，十分欢迎。如果对内容不是很认同，有需要反馈的可以到公众号【薯条闲聊】反馈，十分感谢。不定期会更新，也许是一个月，也许是一年。
-            </p>
+    <!-- 目录侧边栏 -->
+    <nav class="toc-sidebar" id="tocSidebar">
+        <div class="toc-header">
+            <h2>📑 文章目录</h2>
+            <p>点击标题快速跳转</p>
         </div>
-    </header>
+        <ul class="toc-list" id="tocList">
+            <!-- 目录将在此动态生成 -->
+        </ul>
+    </nav>
 
-    <div class="container">
-        <section class="section">
-            <h2>第一章：技术的演进</h2>
-            <p>在过去的几十年里，技术以前所未有的速度发展。从最初的大型计算机到如今的智能手机，从简单的文本界面到虚拟现实，技术的进步彻底改变了我们的生活方式。每一次技术突破都为我们打开了新的可能性，让我们能够解决以前无法解决的问题。
-            </p>
-            <p>计算机科学的奠基人艾伦·图灵曾预言机器能够模拟人类智能，他的思想为人工智能领域奠定了基础。如今，我们看到的自动驾驶汽车、智能语音助手和个性化推荐系统，都是图灵理念的延伸与实践。</p>
-            <div class="image-placeholder">
-                技术演进示意图
-            </div>
-            <p>云计算的出现使得计算资源变得像水电一样易于获取，小型创业公司现在可以访问与大型企业相同的基础设施。这种民主化的计算能力推动了创新，降低了技术门槛，使更多人能够将想法变为现实。</p>
-        </section>
+    <!-- 移动端目录开关 -->
+    <button class="toc-toggle" id="tocToggle">📑 目录</button>
 
-        <section class="section">
-            <h2>第二章：数字时代的变革</h2>
-            <p>互联网的普及连接了全球各地的人们，打破了地理界限，创造了全新的沟通和协作方式。社交媒体、即时通讯和在线协作工具使我们能够与世界各地的人实时交流，分享想法和经验。</p>
-            <div class="quote">
-                "我们正处于一场数字革命之中，这场革命正在改变我们工作、学习和互动的方式。"
-                <div class="author">- 数字未来学家，萨拉·陈</div>
-            </div>
-            <p>远程工作成为可能，许多人现在可以在家中或任何有互联网连接的地方完成工作。这种灵活性为工作与生活的平衡提供了新的可能性，但也带来了新的挑战，如如何保持团队凝聚力和防止职业倦怠。</p>
-            <p>教育领域也经历了深刻的变革。在线学习平台使人们能够按照自己的节奏学习，获取来自世界顶尖大学的课程。这种教育民主化正在帮助缩小知识差距，为更多人提供学习机会。</p>
-        </section>
-
-        <section class="section">
-            <h2>第三章：可持续发展的挑战</h2>
-            <p>随着全球人口增长和经济发展，可持续发展成为我们面临的最重要挑战之一。气候变化、资源枯竭和生物多样性丧失等问题需要我们采取紧急行动。</p>
-            <div class="image-placeholder">
-                可持续发展概念图
-            </div>
-            <p>可再生能源技术，如太阳能和风能，正变得越来越高效和经济实惠。许多国家正在逐步淘汰化石燃料，转向更清洁的能源来源。这种转变不仅有助于减少温室气体排放，还能创造新的就业机会和经济增长点。</p>
-            <p>循环经济理念强调减少浪费和最大化资源利用。通过设计可重复使用、可修复和可回收的产品，我们可以减少对原始资源的依赖，降低环境影响。</p>
-        </section>
-
-        <div class="stats">
-            <div class="stat-item">
-                <span class="stat-number">78%</span>
-                <span class="stat-label">全球互联网普及率</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">2.5万亿</span>
-                <span class="stat-label">每日数据产生量(GB)</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">120亿</span>
-                <span class="stat-label">已连接设备数量</span>
-            </div>
-        </div>
-
-        <section class="section">
-            <h2>第四章：人工智能的未来</h2>
-            <p>人工智能正在从专门任务工具转变为通用智能系统。深度学习、自然语言处理和计算机视觉的进步使AI系统能够执行越来越复杂的任务，从医学图像分析到创作艺术作品。</p>
-            <p>然而，随着AI能力的增强，伦理问题变得越来越重要。我们需要确保AI系统公平、透明且符合人类价值观。算法偏见、隐私保护和就业影响等问题需要认真考虑和解决。</p>
-            <div class="image-placeholder">
-                人工智能应用场景
-            </div>
-            <p>AI在医疗保健领域的应用尤其令人兴奋。从早期疾病检测到个性化治疗计划，AI有潜力显著改善医疗结果并降低成本。在药物发现方面，AI可以加速新药开发过程，帮助应对新的健康威胁。</p>
-        </section>
-
-        <section class="section">
-            <h2>第五章：空间探索的新时代</h2>
-            <p>商业太空公司的发展使空间探索变得更加可及和经济实惠。可重复使用火箭技术显著降低了发射成本，为更多组织和国家进入太空打开了大门。</p>
-            <p>月球和火星任务正在从政府项目扩展到商业合作。多国合作的月球基地计划和私营公司的火星殖民愿景展示了人类对探索宇宙的持续渴望。</p>
-            <div class="quote">
-                "我们选择探索太空，不是因为它容易，而是因为它困难。"
-                <div class="author">- 约翰·F·肯尼迪</div>
-            </div>
-            <p>太空技术不仅推动探索，还为地球带来了实际好处。卫星通信、地球观测和微重力研究为天气预报、灾害管理和新材料开发等领域做出了贡献。</p>
-        </section>
-
-        <section class="section">
-            <h2>第六章：生物技术的突破</h2>
-            <p>基因编辑技术CRISPR-Cas9的发展使科学家能够精确修改DNA序列，为治疗遗传疾病创造了新的可能性。这项技术不仅可用于人类健康，还可用于农业，创造更具抗病性和高产量的作物。</p>
-            <p>合成生物学领域正在设计新的生物系统和有机体，用于生产药物、生物燃料和材料。这种方法有可能彻底改变制造业，创造更可持续的生产方法。</p>
-            <div class="image-placeholder">
-                基因编辑技术示意图
-            </div>
-            <p>个性化医疗正变得越来越现实。通过分析个人的基因组、蛋白质组和其他生物标志物，医生可以为患者量身定制治疗方案，提高疗效并减少副作用。</p>
-        </section>
-
-        <section class="section">
-            <h2>第七章：虚拟与现实的融合</h2>
-            <p>增强现实(AR)和虚拟现实(VR)技术正在模糊物理世界和数字世界之间的界限。从娱乐和游戏到教育和培训，这些技术为用户提供了沉浸式体验。</p>
-            <p>元宇宙概念设想了一个持久的、共享的虚拟空间，人们可以在其中工作、社交和娱乐。虽然仍处于早期阶段，但这一概念展示了数字互动的未来可能性。</p>
-            <p>在企业环境中，VR和AR被用于培训、产品设计和远程协作。这些技术可以帮助员工在安全的环境中练习危险任务，或使设计师能够在产品制造前可视化产品。</p>
-        </section>
-
-        <section class="section">
-            <h2>第八章：未来的挑战与机遇</h2>
-            <p>随着技术加速发展，我们面临着一系列复杂的挑战。数字鸿沟、网络安全威胁、自动化对就业的影响以及技术治理都需要全球合作和深思熟虑的政策应对。</p>
-            <p>与此同时，技术为解决一些最紧迫的全球问题提供了工具。从气候变化到公共卫生危机，技术创新可以帮助我们开发解决方案，创造更可持续、公平的未来。</p>
-            <div class="image-placeholder">
-                未来城市概念图
-            </div>
-            <p>成功驾驭未来需要跨学科合作、持续学习和适应性思维。通过将技术创新与人文价值观相结合，我们可以创造一个既先进又人性化的未来。</p>
-            <p>教育系统需要发展，以培养未来所需的能力，如批判性思维、创造力和数字素养。终身学习将成为常态，因为个人需要不断更新技能以适应快速变化的工作环境。</p>
-        </section>
-
-        <section class="section">
-            <h2>第九章：密码验证功能说明</h2>
-            <p>当您滚动到页面50%的位置时，会触发密码验证机制。这是为了演示如何在滚动到特定位置时添加交互功能。</p>
-        </section>
-
-        <section class="section">
-            <h2>第十章：滚动检测技术</h2>
-            <p>本页面使用了JavaScript的滚动事件监听器来检测用户的滚动位置。当滚动超过页面高度的50%时，会触发密码验证弹窗。</p>
-            <p>滚动位置的计算基于文档的总高度、当前滚动位置和视窗高度。通过比较这些值，我们可以确定用户已经滚动了多少百分比的内容。</p>
-            <p>为了提高性能，滚动事件使用了节流技术，避免在快速滚动时过多的计算。</p>
-            <p>密码验证通过后，页面会恢复正常滚动，并且不会再次触发验证，直到页面刷新。</p>
-        </section>
+    <!-- 阅读进度条 -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>公众号【薯条闲聊】</p>
-            <p>十分感谢花时间阅读完成，希望对你有用。</p>
-            <img src="./wechat-qrcode.jpg" alt="薯条闲聊公众号二维码">
+    <!-- 主要内容区域 -->
+    <main class="main-content" id="mainContent">
+        <div id='write' class=''>
+            <h1><span>一、身份与职责</span></h1>
+            <h2><span>1.1 主要职责</span></h2>
+            <p><em><strong><u><span>作为一个专业的AI编程Agent，您可以在对话过程中创建和引用yb_canvas。</span></u></strong></em></p>
+            <p><span>yb_canvas适用于用户可能修改或者复用的独立内容。您要先分析用户问题，判断是否需要在画布中展示，并应用相应的标签和响应格式，确保每次响应都包含完整的画布标签。</span></p>
+            <h2><span>1.2 使用场景</span></h2>
+            <p><span>以下是必须使用yb_canvas画布的场景：</span></p>
+            <p><span>1. 代码有实质性意义，且用户可能会修改、迭代或接管的代码</span></p>
+            <p><span>2. 独立、复杂的代码，代码可以不依赖对话上下文而被理解</span></p>
+            <p><span>3. 代码最终可能会用于对话之外的场合(例如项目开发、分析本地数据、IDE中调试等)</span></p>
+            <p><span>4. 用户可能多次引用或复用的内容</span></p>
+            <p><span>5. 可以独立运行，并渲染出前端效果对用户展示</span></p>
+            <p>&nbsp;</p>
+            <h1><span>二、工作流程</span></h1>
+            <h2><span>2.1 会话管理</span></h2>
+            <p><span>新任务生成新uuid。如果需要不同编程语言完成，是新任务而不是迭代任务。如果是同一语言的不同实现方法，则认为是迭代任务。</span></p>
+            <p><span>迭代任务保持uuid，保持subtype，保持title，保持filename，递增mversion。</span></p>
+            <h2><span>2.2 内容生成</span></h2>
+            <p><span>前置自然过渡语。用户的需求可能包含多个任务，需要给多个画布标签，画布标签之间也需要有一段过渡语。</span></p>
+            <p><span>参考历史对话输出完整可运行代码，需要包含测试用例或者函数调用，禁止以任何方式省略代码。需要保持代码的一致性、正确性、可运行。</span></p>
+            <h1><span>三、注意事项</span></h1>
+            <h2><span>3.1 格式要求</span></h2>
+            <p><span>必须保证&lt;yb_canvas&gt;&lt;/yb_canvas&gt;、&lt;title&gt;&lt;/title&gt;、&lt;filename&gt;&lt;/filename&gt;、&lt;yb_code&gt;&lt;/yb_code&gt;
+                    成对出现。</span></p>
+            <p><span>关键技术点说明（算法复杂度等）。</span></p>
+            <p><span>严格禁止在代码输出完成后给出运行效果示例。</span></p>
+            <h2><span>3.2 代码要求</span></h2>
+            <p><span>代码中尽量不要让用户输入信息，而是直接在代码中提供测试数据。</span></p>
+            <p><span>游戏、网页、卡片、可视化之类需求，优先使用html+js+css在同一个html文件内实现。</span></p>
+            <p><span>请注意生成代码的正确性，禁止在代码块中出现 &amp;lt; &amp;gt; 等转义符。</span></p>
         </div>
-    </footer>
+    </main>
+
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
 
     <script src="./script.js"></script>
 </body>
