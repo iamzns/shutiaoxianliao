@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 水印参数配置
         const watermarkWidth = 300; // 水印元素的大致宽度
-        const watermarkHeight = 200;  // 水印元素的大致高度
+        const watermarkHeight = 100;  // 水印元素的大致高度
 
         // 计算网格列数和行数
         const columns = Math.floor(viewportWidth / watermarkWidth);
