@@ -20,6 +20,8 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // 获取文章内容容器
     const articleContent = document.getElementById('write');
@@ -35,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitPassword = document.getElementById('submitPassword');
     const errorMessage = document.getElementById('errorMessage');
     const mainContent = document.getElementById('mainContent');
+
+    // 水印容器
+    const watermarkContainer = document.getElementById('watermarkContainer');
 
     // 状态变量
     let passwordVerified = false;
@@ -97,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             sessionStorage.setItem('passwordVerified', 'true');
             sessionStorage.setItem('verificationDate', new Date().toDateString());
 
-            // alert('密码验证成功！您可以继续浏览完整内容。');
+            //alert('密码验证成功！您可以继续浏览完整内容。');
         } else {
             errorMessage.textContent = '密码错误，请重新输入';
             passwordInput.value = '';
@@ -115,6 +120,106 @@ document.addEventListener('DOMContentLoaded', function () {
             passwordVerified = true;
         }
     }
+
+    // 创建不重叠的水印
+    function createWatermark() {
+        // 水印文本数组
+        const watermarkTexts = [
+            'asimpleme.tech',
+        ];
+
+        // 颜色数组
+        const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12'];
+
+        // 获取视口尺寸
+        const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+        // 清除现有水印
+        watermarkContainer.innerHTML = '';
+
+        // 水印参数配置
+        const watermarkWidth = 300; // 水印元素的大致宽度
+        const watermarkHeight = 200;  // 水印元素的大致高度
+
+        // 计算网格列数和行数
+        const columns = Math.floor(viewportWidth / watermarkWidth);
+        const rows = Math.floor(viewportHeight / watermarkHeight);
+
+        // 计算网格间距
+        const columnGap = viewportWidth / columns;
+        const rowGap = viewportHeight / rows;
+
+        // 存储已使用的位置
+        const usedPositions = new Set();
+
+        // 创建水印
+        for (let row = 0; row < rows; row++) {
+            for (let col = 0; col < columns; col++) {
+                // 随机决定是否在此网格创建水印（70%的概率创建）
+                if (Math.random() > 0.3) {
+                    // 网格中心位置
+                    const centerX = col * columnGap + columnGap / 2;
+                    const centerY = row * rowGap + rowGap / 2;
+
+                    // 随机偏移，但确保不超出网格范围
+                    const offsetX = (Math.random() - 0.5) * columnGap * 0.8;
+                    const offsetY = (Math.random() - 0.5) * rowGap * 0.8;
+
+                    const left = centerX + offsetX;
+                    const top = centerY + offsetY;
+
+                    // 创建位置键，检查是否太靠近其他水印
+                    const positionKey = `${Math.floor(left / watermarkWidth)}-${Math.floor(top / watermarkHeight)}`;
+
+                    if (!usedPositions.has(positionKey)) {
+                        usedPositions.add(positionKey);
+
+                        const watermark = document.createElement('div');
+                        watermark.className = 'watermark';
+
+                        // 随机选择水印文本
+                        const text = watermarkTexts[Math.floor(Math.random() * watermarkTexts.length)];
+                        watermark.textContent = text;
+
+                        // 随机旋转角度
+                        const rotate = -30 + Math.random() * 60; // -30到30度之间
+
+                        // 随机字体大小
+                        const fontSize = 16 + Math.random() * 8; // 16-24px
+
+                        // 随机颜色
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+
+                        // 设置样式
+                        watermark.style.left = `${left}px`;
+                        watermark.style.top = `${top}px`;
+                        watermark.style.transform = `rotate(${rotate}deg)`;
+                        watermark.style.fontSize = `${fontSize}px`;
+                        watermark.style.color = color;
+
+                        // 随机透明度
+                        const opacity = 0.05 + Math.random() * 0.1;
+                        watermark.style.opacity = opacity;
+
+                        // 随机添加高亮
+                        if (Math.random() > 0.7) {
+                            watermark.classList.add('watermark-highlight');
+                        }
+
+                        watermarkContainer.appendChild(watermark);
+                    }
+                }
+            }
+        }
+    }
+
+    // 监听窗口大小变化，重新创建水印
+    let resizeTimeout;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(createWatermark, 250);
+    });
 
     // 提取所有h1和h2元素
     const headings = articleContent.querySelectorAll('h1, h2');
@@ -137,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .trim();
 
         // 2. 如果是中文标题，提取关键部分
-        // 这里简单处理，取前几个字符
+        // 这里简单处理，取前4个字符
         if (/[\u4e00-\u9fa5]/.test(cleanText)) {
             // 中文标题，取前4个字符
             cleanText = cleanText.substring(0, 4);
@@ -329,6 +434,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // 检查之前的验证状态
     checkPreviousVerification();
 
+    // 创建水印
+    createWatermark();
+
     // 页面加载完成后滚动到顶部
     window.scrollTo(0, 0);
 
@@ -347,5 +455,23 @@ window.addEventListener('resize', function () {
     const tocSidebar = document.getElementById('tocSidebar');
     if (window.innerWidth > 1024) {
         tocSidebar.classList.remove('open');
+    }
+});
+
+// 防止右键菜单查看水印代码
+document.addEventListener('contextmenu', function (e) {
+    if (e.target.classList.contains('watermark-container') ||
+        e.target.classList.contains('watermark')) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// 防止选择水印文本
+document.addEventListener('selectstart', function (e) {
+    if (e.target.classList.contains('watermark-container') ||
+        e.target.classList.contains('watermark')) {
+        e.preventDefault();
+        return false;
     }
 });
