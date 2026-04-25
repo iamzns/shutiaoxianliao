@@ -13,6 +13,10 @@ body {
     min-height: 100vh;
 }
 
+img {
+    width: 100%;
+}
+
 /* 目录侧边栏样式 */
 .toc-sidebar {
     position: fixed;
