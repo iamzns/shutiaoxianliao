@@ -13,6 +13,19 @@ body {
     min-height: 100vh;
 }
 
+table {
+    border-collapse: collapse;
+    /* 合并边框，避免双线 */
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ccc;
+    /* 设置边框颜色和粗细 */
+}
+
 p img {
     width: 100%;
 }
@@ -23,7 +36,11 @@ p img {
     left: 0;
     top: 0;
     width: 300px;
+    /* --- 关键修复点 --- */
     height: 100vh;
+    height: 100dvh;
+    /* 现代浏览器会使用此行，完美适配手机 */
+    /* --- 关键修复点 --- */
     background: linear-gradient(180deg, #2c3e50 0%, #1a1a2e 100%);
     color: #fff;
     padding: 20px 0;
@@ -317,11 +334,14 @@ p img {
         display: block;
     }
 
+    /* --- 关键修复点 --- */
     .main-content {
         margin-left: 0;
+        /* 修复：移除左侧空白导致的缩放 */
         padding: 40px 30px;
     }
 
+    /* --- 关键修复点 --- */
     .modal-content {
         width: 95%;
         padding: 20px;
