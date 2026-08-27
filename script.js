@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function createWatermark() {
         // 水印文本数组
         const watermarkTexts = [
-            'asimpleme.tech',
+            'rightsee.top',
         ];
 
         // 颜色数组
