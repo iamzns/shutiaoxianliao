@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金融知识速查手册</title>
+<style>
+  :root {
+    --primary: #1a73e8;
+    --primary-light: #e8f0fe;
+    --accent: #fbbc04;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #202124;
+    --text-secondary: #5f6368;
+    --border: #e0e0e0;
+    --success: #34a853;
+    --warning: #ea4335;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0 0 60px;
+  }
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: #fff;
+    padding: 40px 20px 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  header h1 { font-size: 2em; margin-bottom: 8px; }
+  header p { opacity: .85; font-size: .95em; }
+  /* Layout */
+  .container { max-width: 1000px; margin: 30px auto; padding: 0 16px; }
+  /* Category cards */
+  .section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .section-title {
+    background: var(--primary);
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 1.15em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon { font-size: 1.3em; }
+  .section-body { padding: 18px 22px; }
+  /* Timeline */
+  .timeline { position: relative; padding-left: 8px; }
+  .timeline-item {
+    position: relative;
+    padding: 10px 14px 10px 26px;
+    border-left: 3px solid var(--primary);
+    margin-bottom: 12px;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -7px; top: 16px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+  .timeline-date {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: .92em;
+  }
+  /* Key-value list */
+  .kv-list { list-style: none; }
+  .kv-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .kv-list li:last-child { border-bottom: none; }
+  .kv-list .label {
+    flex: 0 0 auto;
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 110px;
+  }
+  .kv-list .value { flex: 1; color: var(--text); }
+  /* Bullet list */
+  .bullet-list { list-style: none; }
+  .bullet-list li {
+    padding: 8px 0 8px 22px;
+    position: relative;
+    border-bottom: 1px dashed var(--border);
+  }
+  .bullet-list li:last-child { border-bottom: none; }
+  .bullet-list li::before {
+    content: '•';
+    position: absolute;
+    left: 4px;
+    color: var(--primary);
+    font-weight: bold;
+  }
+  /* Highlight number */
+  .num {
+    display: inline-block;
+    background: var(--accent);
+    color: #202124;
+    font-weight: 700;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-size: .92em;
+  }
+  /* Equation cards */
+  .eq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .eq-card {
+    background: var(--primary-light);
+    border-radius: 10px;
+    padding: 16px;
+    border-left: 4px solid var(--primary);
+  }
+  .eq-name { font-weight: 700; font-size: 1.05em; margin-bottom: 6px; color: var(--primary); }
+  .eq-desc { font-size: .92em; color: var(--text-secondary); }
+  /* Governance mode cards */
+  .mode-card {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .mode-card h4 { color: var(--primary); margin-bottom: 6px; }
+  .mode-card p { font-size: .92em; color: var(--text-secondary); }
+  /* Note box */
+  .note-box {
+    background: #fff7e6;
+    border: 1px solid #ffe0a3;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: .9em;
+    color: #8a6d3b;
+    margin-top: 12px;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.5em; }
+    .kv-list li { flex-direction: column; gap: 2px; }
+    .kv-list .label { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📘 金融知识速查手册</h1>
+  <p>监管指标 · 市场发展 · 货币理论 · 公司治理 · 协议标准</p>
+</header>
+
+<div class="container">
+
+  <!-- 1. 商业银行监管指标 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🏦</span> 商业银行 — 监管指标</div>
+    <div class="section-body">
+      <ul class="kv-list">
+        <li><span class="label">净稳定资金比例</span><span class="value">不低于 <span class="num">100%</span></span></li>
+        <li><span class="label">流动性覆盖率</span><span class="value">不低于 <span class="num">100%</span></span></li>
+        <li><span class="label">流动性匹配率</span><span class="value">不低于 <span class="num">100%</span></span></li>
+        <li><span class="label">流动性比例</span><span class="value">不低于 <span class="num">25%</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. 外债风险与国际储备 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🌍</span> 外债风险与国际储备经验线</div>
+    <div class="section-body">
+      <ul class="kv-list">
+        <li><span class="label">储备/外债</span><span class="value">国际储备额与外债总额的合理比例：<span class="num">30%-50%</span></span></li>
+        <li><span class="label">三大率</span><span class="value">偿债率 <span class="num">20%</span>，债务率 <span class="num">100%</span>，负债率 <span class="num">20%</span></span></li>
+        <li><span class="label">储备/GNP</span><span class="value">国际储备额与国民生产总额之比（经验指标）：约 <span class="num">10%</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. 证券公司股权与出资限制 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📊</span> 证券公司 — 股权与出资限制</div>
+    <div class="section-body">
+      <ul class="bullet-list">
+        <li>股权锁定期满后，股东质押所持股权比例不得超过所持该证券公司股权比例的 <span class="num">50%</span></li>
+        <li>私募基金子公司对二级管理子公司的持股或出资比例应不少于 <span class="num">35%</span>，且拥有不得低于合作方的管理控制权</li>
+        <li>非货币财产出资总额不得超过证券公司注册资本的 <span class="num">30%</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. 中国金融市场发展里程碑 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📅</span> 中国金融市场发展里程碑</div>
+    <div class="section-body">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2010年12月</div>
+          <div>中国银行间市场交易商协会推出<strong>超短期融资券</strong>，最长期限 <span class="num">270天</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2013年</div>
+          <div>中国人民银行创设<strong>常备借贷便利</strong>（SLF）</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2019年6月</div>
+          <div>上海证券交易所<strong>科创板</strong>正式开板</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2021年4月</div>
+          <div>深圳证券交易所<strong>主板和中小企业板合并</strong>正式实施</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2021年9月</div>
+          <div><strong>北京证券交易所</strong>注册成立</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 货币需求理论 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💰</span> 货币需求理论 — 四大方程式</div>
+    <div class="section-body">
+      <div class="eq-grid">
+        <div class="eq-card">
+          <div class="eq-name">费雪方程式</div>
+          <div class="eq-desc">宏观视角 · 交易货币需求</div>
+        </div>
+        <div class="eq-card">
+          <div class="eq-name">剑桥方程式</div>
+          <div class="eq-desc">微观视角 · 余额货币需求</div>
+        </div>
+        <div class="eq-card">
+          <div class="eq-name">弗里德曼</div>
+          <div class="eq-desc">以"收入"为核心变量</div>
+        </div>
+        <div class="eq-card">
+          <div class="eq-name">凯恩斯</div>
+          <div class="eq-desc">以"利率"为核心变量</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 公司治理模式 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🏢</span> 公司治理模式</div>
+    <div class="section-body">
+      <div class="mode-card">
+        <h4>👨‍👩‍👧‍👦 家族模式</h4>
+        <p>所有权与经营权高度集中，决策效率高。</p>
+      </div>
+      <div class="mode-card">
+        <h4>🇬🇧🇺🇸 英美模式</h4>
+        <p>强调股东价值最大化，独立董事监督作用显著。</p>
+      </div>
+      <div class="mode-card">
+        <h4>🇩🇪🇯🇵 德日模式</h4>
+        <p>股权高度集中。</p>
+      </div>
+      <div class="mode-card">
+        <h4>🚩 国家出资公司模式</h4>
+        <p>党的领导融入公司治理的各个环节。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. 巴塞尔协议 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📜</span> 巴塞尔协议 — 资本充足率</div>
+    <div class="section-body">
+      <ul class="kv-list">
+        <li><span class="label">巴塞尔协议 Ⅱ</span><span class="value">商业银行最低资本充足率 <span class="num">8%</span></span></li>
+        <li><span class="label">巴塞尔协议 Ⅲ</span><span class="value">一级资本充足率下限 <span class="num">6%</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8. 综合速记 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🧠</span> 综合速记</div>
+    <div class="section-body">
+      <ul class="bullet-list">
+        <li><strong>金融监管体制：</strong>一元多头 → 法国；集权式 → 德国、日本</li>
+        <li><strong>货币市场工具：</strong>同业拆借、银行承兑汇票、回购协议、商业票据</li>
+        <li><strong>买断式回购期限：</strong>最长不得超过 <span class="num">365天</span></li>
+        <li><strong>注册资本：</strong>保险公司 ≥ <span class="num">2亿元</span>；基金托管人净资产 ≥ <span class="num">200亿元</span></li>
+        <li><strong>业务合规时限：</strong>证券中间介绍业务（前6个月无违规）；融资融券业务（2年内无违规）</li>
+        <li><strong>治理职责口诀：</strong>实施靠高管，最终看董事会；股权直接找董秘，财务检查找监事，增减资本股东会</li>
+      </ul>
+      <div class="note-box">
+        💡 <strong>记忆口诀：</strong>"高管做事、董事会拍板、董秘管股权、监事查财务、股东会定资本"——把治理职责对应到人，考试直接套用。
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
