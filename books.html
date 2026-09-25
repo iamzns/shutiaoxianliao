@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投资理财知识体系与书单（整合版·2008年后精选）</title>
+<style>
+  :root {
+    --bg: #f7f8fa; --card: #ffffff; --ink: #1f2933; --muted: #6b7280;
+    --accent: #0f6b5f; --accent-light: #e6f2f0; --line: #e5e7eb;
+    --gold: #b45309; --gold-bg: #fef3c7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+    line-height: 1.75; font-size: 15px;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 32px 20px 64px; }
+  header.hero {
+    background: linear-gradient(135deg, #0f6b5f 0%, #14876f 60%, #1d9a80 100%);
+    color: #fff; border-radius: 14px; padding: 36px 36px 28px; margin-bottom: 28px;
+  }
+  header.hero h1 { margin: 0 0 10px; font-size: 26px; letter-spacing: 1px; }
+  header.hero p { margin: 4px 0; opacity: .92; font-size: 14px; }
+  .tagline { display: inline-block; background: rgba(255,255,255,.16); border-radius: 999px; padding: 2px 12px; margin-right: 8px; font-size: 13px; }
+  nav.toc {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 18px 24px; margin-bottom: 28px;
+  }
+  nav.toc b { color: var(--accent); }
+  nav.toc a { color: var(--ink); text-decoration: none; margin-right: 14px; font-size: 14px; border-bottom: 1px dashed #c9ced6; }
+  nav.toc a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  section.card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 24px 28px; margin-bottom: 24px;
+  }
+  h2 { font-size: 20px; margin: 0 0 14px; padding-left: 12px; border-left: 5px solid var(--accent); }
+  h3 { font-size: 16px; margin: 22px 0 10px; color: var(--accent); }
+  p { margin: 8px 0; }
+  .muted { color: var(--muted); font-size: 13.5px; }
+  .note {
+    background: var(--accent-light); border-radius: 8px; padding: 10px 14px;
+    font-size: 13.5px; margin: 10px 0;
+  }
+  .warn { background: var(--gold-bg); color: #7c4a03; border-radius: 8px; padding: 10px 14px; font-size: 13.5px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 6px; font-size: 13.5px; }
+  th {
+    background: #f0f5f4; color: #134e48; text-align: left; padding: 8px 10px;
+    border: 1px solid var(--line); font-weight: 600; white-space: nowrap;
+  }
+  td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafbfc; }
+  .pyramid {
+    background: #0f172a; color: #d1fae5; border-radius: 10px; padding: 18px 22px;
+    font-family: Consolas, "Courier New", monospace; font-size: 13.5px; line-height: 2; overflow-x: auto;
+  }
+  ol, ul { padding-left: 22px; margin: 8px 0; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); word-break: break-all; }
+  .pill { display: inline-block; background: var(--accent-light); color: var(--accent); border-radius: 999px; padding: 0 10px; font-size: 12.5px; margin-right: 6px; }
+  footer { text-align: center; color: var(--muted); font-size: 12.5px; margin-top: 30px; }
+  @media print {
+    body { background: #fff; }
+    section.card, nav.toc, header.hero { border: none; box-shadow: none; }
+    nav.toc { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>投资理财知识体系与书单</h1>
+  <p><span class="tagline">整合版 · 含出版日期 · 2008年后精选</span></p>
+  <p>定位：个人自由读者，通过「重要奖项得主著作 + 重要机构成员著作 + 诺奖金融线」构建知识库</p>
+  <p>目标：宏观经济判断力 + 微观市场操作力 = 能在市场上赚到钱</p>
+</header>
+
+<nav class="toc">
+  <b>目录</b> &nbsp;
+  <a href="#s1">一·总体框架</a>
+  <a href="#s2">二·宏观与政策</a>
+  <a href="#s3">三·定价与组合</a>
+  <a href="#s4">四·套利专项</a>
+  <a href="#s5">五·执行与风控</a>
+  <a href="#s6">六·选书规则</a>
+  <a href="#s7">七·阅读路径</a>
+  <a href="#s8">八·防坑提醒</a>
+  <a href="#s9">九·免费正版获取</a>
+  <a href="#s10">附·删除备查</a>
+</nav>
+
+<section class="card">
+  <p class="note"><b>出版日期说明</b>：中文著作标初版年份+出版社；外文著作标"最新版次年（英文初版年）"；教材类版次更新频繁，购买时选最新版次。</p>
+  <p class="note"><b>版本过滤</b>：初版在 2008 年以前且无实质更新的书籍已全部移出主书单（详见文末删除清单）；仅保留最新版次仍在更新、内容跟得上当下的教材和数据类书籍。</p>
+</section>
+
+<section class="card" id="s1">
+  <h2>一、总体框架：六层知识金字塔（从大到小）</h2>
+  <div class="pyramid">
+第6层  个人执行与风控    —— 仓位、回撤、成本、心理，决定前面所有东西能否落地<br>
+第5层  市场微观与套利    —— ETF/LOF、可转债、期货期权、统计套利、跨市场价差<br>
+第4层  资产定价与组合    —— CAPM、因子、估值、行为金融，决定"买什么、配多少、贵不贵"<br>
+第3层  金融中介与资产    —— 银行/债市/股市/REITs/资管，决定哪类资产可投、流动性如何<br>
+第2层  中国宏观与政策    —— 增长、通胀、财政、货币、汇率、监管，决定股债汇房大方向<br>
+第1层  世界经济与制度    —— 全球货币体系、贸易产业链、发展经济学，理解大周期与长期边界
+  </div>
+  <p><b>关键定位</b>：你整理的中国奖项（孙冶方/创新奖/张培刚/浦山）与机构（国发院/国研中心/央行/CF40/社科院）主要覆盖第 1–3 层；要"在市场上赚钱"，必须补足第 4–6 层，否则容易变成只懂宏观名词、不会下单。</p>
+</section>
+
+<section class="card" id="s2">
+  <h2>二、第 1–3 层：宏观、政策与金融体系书单</h2>
+
+  <h3>2.1 中国奖项系（孙冶方、张培刚、浦山、刘诗白等获奖作者）</h3>
+  <table>
+    <tr><th>书名</th><th>作者</th><th>出版</th><th>身份/奖项</th><th>说明</th></tr>
+    <tr><td>《货币数量、利率调控与政策转型》</td><td>伍戈、李斌</td><td>2017（中国金融出版社）</td><td>央行背景+CF40；孙冶方获奖</td><td>量价调控、政策传导，做债券/宏观交易很贴</td></tr>
+    <tr><td>《信用创造、货币供求与经济结构》</td><td>李斌、伍戈</td><td>2014（中国金融出版社）</td><td>央行背景，孙冶方获奖</td><td>货币分析框架最完整的一本</td></tr>
+    <tr><td>《解读中国经济》</td><td>林毅夫</td><td>2008 初版（北京大学出版社，增订版多次）</td><td>北大国发院创始院长；张培刚奖圈核心</td><td>长期增长与产业选择</td></tr>
+    <tr><td>《四十不惑：中国改革开放发展经验分享》</td><td>蔡昉</td><td>2018（中国社会科学出版社）</td><td>曾获孙冶方奖、张培刚奖、中国经济理论创新奖</td><td>人口红利+增长分配的综合框架</td></tr>
+    <tr><td>《当代中国经济改革教程》</td><td>吴敬琏</td><td>2010（上海远东出版社）</td><td>首届中国经济学杰出贡献奖得主</td><td>改革全貌的系统梳理</td></tr>
+    <tr><td>《结构性改革》</td><td>黄奇帆</td><td>2020（中信出版集团）</td><td>前重庆市长、原中财办顾问</td><td>土地、金融、开放的政策落地直觉</td></tr>
+    <tr><td>《读懂中国金融：金融改革的经济学分析》</td><td>黄益平、王勋</td><td>2021（人民日报出版社）</td><td>CF40/北大国发院体系</td><td>金融改革、利率、数字金融的入门书</td></tr>
+    <tr><td>《太阳之下无新事》</td><td>余永定</td><td>2020（中国社会科学出版社）</td><td>社科院学部委员、CF40</td><td>30年宏观政策文集，汇率与对外平衡进阶</td></tr>
+  </table>
+
+  <h3>2.2 智库与机构系（国发院、国研中心、央行、CF40、社科院）</h3>
+  <table>
+    <tr><th>书名</th><th>作者</th><th>出版</th><th>机构</th><th>说明</th></tr>
+    <tr><td>《渐行渐近的金融周期》</td><td>彭文生</td><td>2017（中信出版集团）</td><td>中金首席、CF40</td><td>信用、房地产、货币、杠杆一体看</td></tr>
+    <tr><td>《多重约束下的货币政策传导机制》</td><td>张晓慧等</td><td>2020（中国金融出版社）</td><td>央行货币政策司原司长、CF40</td><td>央行视角的传导机制</td></tr>
+    <tr><td>《汇率的本质》</td><td>管涛</td><td>2016（中信出版集团）</td><td>外管局原司长、CF40学术委员</td><td>8·11汇改、国际收支，做汇差/外盘必读</td></tr>
+    <tr><td>《中国金融改革思考录》</td><td>易纲</td><td>2009（商务印书馆）</td><td>央行前行长</td><td>汇率与金融改革的央行视角</td></tr>
+    <tr><td>《见证失衡》</td><td>余永定</td><td>2010（生活·读书·新知三联书店）</td><td>社科院</td><td>双顺差与人民币汇率</td></tr>
+    <tr><td>《从制造到服务》</td><td>张斌</td><td>2021（世纪文景/上海人民出版社）</td><td>社科院世经政所、CF40资深研究员</td><td>结构转型与宏观政策当下框架</td></tr>
+    <tr><td>《经济运行的逻辑》</td><td>高善文</td><td>2013（中信出版社）</td><td>安信证券首席</td><td>长期宏观数据派，物价、杠杆、产能、周期判断实用</td></tr>
+    <tr><td>《宏观中国：经济增长、周期波动与资产配置》</td><td>张明</td><td>2020（东方出版社）</td><td>社科院、CF40</td><td>直接从宏观到股债汇配置，个人投资者友好</td></tr>
+    <tr><td>《框架：中国经济、政策路径与金融市场》</td><td>高瑞东</td><td>2022（中信出版集团）</td><td>光大证券首席</td><td>高频数据→政策→市场链条，理清传导</td></tr>
+    <tr><td>《探路：中国式现代化建设金融方略》</td><td>CF40 书系</td><td>2023（中国金融出版社）</td><td>黄益平等主编</td><td>金融现代化的机构共识框架</td></tr>
+    <tr><td>《城乡中国》</td><td>周其仁</td><td>2013–2014（中信出版社；修订版 2017）</td><td>北大国发院教授</td><td>土地与城市化、产权视角</td></tr>
+    <tr><td>《改革的逻辑》</td><td>周其仁</td><td>2013（中信出版社）</td><td>同上</td><td>中国改革的产权视角</td></tr>
+    <tr><td>《八次危机》</td><td>温铁军</td><td>2013（东方出版社）</td><td>三农学者</td><td>农村视角看危机转嫁</td></tr>
+    <tr><td>《置身事内：中国政府与经济发展》</td><td>兰小欢</td><td>2021（上海人民出版社/世纪文景）</td><td>复旦经济学院</td><td>政府财政—土地—金融底层逻辑，最优先读</td></tr>
+    <tr><td>《中国经济增长十年展望》（系列）</td><td>刘世锦主编</td><td>2013 年起每年一辑（中信出版集团）</td><td>国研中心</td><td>中长期结构与增长</td></tr>
+  </table>
+
+  <h3>2.3 诺奖/国际宏观货币系（建立底层框架）</h3>
+  <table>
+    <tr><th>书名</th><th>作者</th><th>出版</th><th>说明</th></tr>
+    <tr><td>《宏观经济学》</td><td>曼昆</td><td>最新版次近年更新（英文初版1989，教材常青）</td><td>入门闭环（IS-LM、通胀、失业、增长），买最新版</td></tr>
+    <tr><td>《宏观经济学》</td><td>布兰查德</td><td>最新版次近年更新（英文初版1997）</td><td>预期、政策规则、开放经济</td></tr>
+    <tr><td>《宏观经济学》</td><td>多恩布什</td><td>最新版次近年更新（英文初版1976）</td><td>国际宏观、汇率、危机</td></tr>
+    <tr><td>《货币金融学》</td><td>米什金</td><td>最新版次近年更新（英文初版1986）</td><td>货币传导、银行、央行、金融稳定一本通</td></tr>
+    <tr><td>《金融的本质》</td><td>伯南克</td><td>英文 2013，中译 2014（中信出版社）</td><td>央行叙事与危机处理，通俗</td></tr>
+    <tr><td>《金融危机、流动性与国际货币体系》</td><td>梯若尔（诺奖）</td><td>英文初版 2015，中译 2016（中国人民大学出版社）</td><td>危机与监管，政策高阶</td></tr>
+    <tr><td>《非理性繁荣》</td><td>希勒（诺奖）</td><td>第3版 2015（英文初版2000，内容大幅更新）</td><td>资产泡沫识别的行为金融经典，读第3版</td></tr>
+    <tr><td>《叙事经济学》</td><td>希勒（诺奖）</td><td>英文初版 2019，中译 2020（中信出版集团）</td><td>故事如何驱动市场</td></tr>
+    <tr><td>《思考，快与慢》</td><td>卡尼曼（诺奖）</td><td>英文初版 2011，中译 2012</td><td>认知偏误总纲</td></tr>
+    <tr><td>《噪声》</td><td>卡尼曼、西博尼、桑斯坦</td><td>英文初版 2021，中译 2022（中信出版集团）</td><td>判断偏差，配合套利与择时非常有用</td></tr>
+    <tr><td>《债务危机》</td><td>达利欧</td><td>英文初版 2018，中译 2019（中信出版集团）</td><td>债务周期模板，实操价值极高</td></tr>
+    <tr><td>《疯狂、惊恐和崩溃：金融危机史》</td><td>金德尔伯格、阿利伯</td><td>第6版 2011（英文初版1978）</td><td>危机范式教科书，读新版</td></tr>
+    <tr><td>《大衰退：宏观经济学的圣杯》</td><td>辜朝明</td><td>英文初版 2008，中译 2009（东方出版社）</td><td>资产负债表衰退理论</td></tr>
+    <tr><td>《涛动周期论》</td><td>周金涛</td><td>2017（机械工业出版社）</td><td>康波周期，中国券商宏观周期代表作</td></tr>
+    <tr><td>《伟大的博弈》</td><td>戈登</td><td>中信 2019 更新版（覆盖至2019年）</td><td>华尔街史，数据更新到当下</td></tr>
+  </table>
+
+  <h3>2.4 持续跟踪的"活水"（书之外）</h3>
+  <ul>
+    <li>吴敬琏主编《比较》辑刊；CF40 年度报告与课题报告（官网免费）；</li>
+    <li>"远见杯"宏观预测获奖首席的月度报告（彭文生、伍戈、高瑞东等）；</li>
+    <li>中金所/上期所等交易所投教材料（规则比书更贴国内）。</li>
+  </ul>
+</section>
+
+<section class="card" id="s3">
+  <h2>三、第 4 层：资产定价与组合（从"懂宏观"到"会下单"）</h2>
+  <table>
+    <tr><th>书名</th><th>作者</th><th>出版</th><th>说明</th></tr>
+    <tr><td>《投资学》</td><td>博迪、凯恩、马库斯</td><td>最新版次近年更新（英文初版1989，教材常青）</td><td>定价、组合、债券、衍生品、有效市场，全而标准，工具书</td></tr>
+    <tr><td>《漫步华尔街》</td><td>马尔基尔</td><td>第12版 2019（英文初版1973，内容持续更新）</td><td>因子、被动投资、行为偏差、个人配置</td></tr>
+    <tr><td>《投资估值》</td><td>达摩达兰</td><td>第3版 2012（英文初版1994）</td><td>个股估值、现金流折现，权益深研用</td></tr>
+    <tr><td>《股市长线法宝》</td><td>西格尔</td><td>第6版 2022（英文初版1994，数据更新至当下）</td><td>两百年资产回报数据，长期收益常识</td></tr>
+    <tr><td>《错误的行为》</td><td>塞勒（诺奖）</td><td>英文初版 2015，中译 2016（中信出版集团）</td><td>行为金融发展史，好读</td></tr>
+    <tr><td>《投资最重要的事》</td><td>霍华德·马克斯</td><td>英文初版 2011，中译 2012（中信出版社）</td><td>周期思维与第二层思考</td></tr>
+    <tr><td>《共同基金常识》</td><td>博格</td><td>10周年纪念版 2009（英文初版1999）</td><td>指数化+成本控制</td></tr>
+    <tr><td>《巴菲特致股东的信》</td><td>巴菲特，坎宁安编</td><td>第5版 2023（初版1997，新版持续更新）</td><td>反复读（原信官方免费，见第九节）</td></tr>
+  </table>
+  <p><b>中国权益实战补充</b>（A股语境）：《投资中最简单的事》（邱国鹭，2014，中国人民大学出版社）、《投资中国》（王国斌，2022，北京联合出版公司/湛庐文化）、《手把手教你读财报》（唐朝，初版2015；新准则升级版2021，中国经济出版社——建议直接买2021升级版）、《股市进阶之道》（李杰，2014）、《时间的玫瑰》（但斌，修订版2018）、《一个投资家的20年》（杨天南，约2016）。</p>
+</section>
+
+<section class="card" id="s4">
+  <h2>四、第 5 层：套利专项（核心：具体怎么赚价差）</h2>
+  <p>按「低风险规则套利 → 统计/量化套利 → 衍生品套利」三级递进。</p>
+
+  <h3>4.0 基础工程</h3>
+  <table>
+    <tr><th>书名</th><th>作者</th><th>出版</th><th>说明</th></tr>
+    <tr><td>《期权、期货及其他衍生品》</td><td>赫尔</td><td>第11版 2021（英文初版1988，教材常青）</td><td>期权期货定价、希腊字母、套利组合必备圣经</td></tr>
+    <tr><td>《金融工程》</td><td>张维</td><td>高等教育出版社，国家级规划教材，多版修订（现为第六版）</td><td>无套利、定价、对冲基础</td></tr>
+  </table>
+
+  <h3>4.1 A 级：散户可触达的低风险/规则套利</h3>
+  <table>
+    <tr><th>书名/材料</th><th>出版</th><th>说明</th></tr>
+    <tr><td>《低风险套利实战》（小明哥讲套利）</td><td>2025（中国经济出版社）</td><td>现金管理、国债、LOF、ETF、可转债，普通账户能做的都在内，案例新（含2024年9月极端行情）</td></tr>
+    <tr><td>《稳赚：提升理财收益的投资工具》（李红萍）</td><td>2019（电子工业出版社）</td><td>股票配对、要约收购、可转债、ETF/LOF、跨境汇差息差，目录式入门</td></tr>
+    <tr><td>可转债专题：券商固收团队研报（安信/兴业等）+ Wind 可转债研报合集</td><td>持续更新</td><td>重点看转股价下修、回售、强赎、溢价率均值回归</td></tr>
+    <tr><td>ETF/LOF 套利：券商机构培训手册 + Hull 的创设赎回机制章节</td><td>持续更新</td><td>个人主要做折溢价、跨市场、申赎替代，不碰高频做市</td></tr>
+  </table>
+
+  <h3>4.2 B 级：统计/量化套利</h3>
+  <table>
+    <tr><th>书名</th><th>出版</th><th>说明</th></tr>
+    <tr><td>《统计套利——理论与实战》（金志宏）</td><td>2016（电子工业出版社）</td><td>配对、协整、均值回归、市场中性、ETF套利、多因子，入门量化</td></tr>
+    <tr><td>《量化交易》（Ernest Chan）</td><td>英文初版 2008</td><td>用 Python 做个人量化交易的第一本</td></tr>
+    <tr><td>《算法交易：制胜策略与原理》（Ernest Chan）</td><td>英文初版 2013</td><td>协整、OLS 价差、z-score、持仓周期，进阶</td></tr>
+    <tr><td>《计量经济学导论》（伍德里奇）</td><td>最新版次近年更新（英文初版1999，教材常青）</td><td>补计量基本功，否则统计套利只看代码会踩过拟合</td></tr>
+  </table>
+
+  <h3>4.3 C 级：期货/期权/跨市场套利</h3>
+  <table>
+    <tr><th>材料</th><th>出版</th><th>说明</th></tr>
+    <tr><td>Hull（同 4.0）</td><td>同上</td><td>期货升贴水、期权盒式/转换套利、备兑、价差组合</td></tr>
+    <tr><td>中金所/上期所/大商所/郑商所投教手册</td><td>持续更新</td><td>比书更贴国内交易规则与保证金制度</td></tr>
+    <tr><td>《国债期货实务》类小册子 + 伍戈李斌 + 米什金</td><td>以实际版本为准</td><td>利率套利：期限利差、基差、骑乘策略</td></tr>
+    <tr><td>管涛汇率著作 + IMF 汇率制度资料</td><td>同 2.2</td><td>跨境套利：注意资本管制、换汇成本、对冲成本，不碰违规地下通道</td></tr>
+  </table>
+</section>
+
+<section class="card" id="s5">
+  <h2>五、第 6 层：个人执行与风控（贯穿始终）</h2>
+  <table>
+    <tr><th>书名</th><th>作者</th><th>出版</th><th>说明</th></tr>
+    <tr><td>《噪声》</td><td>卡尼曼等</td><td>英文初版 2021，中译 2022</td><td>判断偏差的系统纠错</td></tr>
+    <tr><td>《金钱心理学》</td><td>摩根·豪泽尔</td><td>英文初版 2020，中译近年（中信出版集团）</td><td>财富观与行为纪律，比交易技巧更根本</td></tr>
+    <tr><td>自己的交易日志</td><td>——</td><td>——</td><td>每个策略记录：最大回撤、胜率、手续费、滑点、极端行情止损</td></tr>
+  </table>
+</section>
+
+<section class="card" id="s6">
+  <h2>六、把"奖项/机构"变成选书规则（避免乱买）</h2>
+  <table>
+    <tr><th>买什么书</th><th>优先看</th><th>不优先看</th></tr>
+    <tr><td>中国宏观书</td><td>孙冶方/张培刚/浦山/刘诗白获奖作者 + 央行/国发院/国研中心/CF40/社科院在职或出身作者</td><td>纯自媒体爆款、书名含"暴涨""财富密码"</td></tr>
+    <tr><td>国际宏观书</td><td>诺奖得主（希勒、卡尼曼、梯若尔）+ 央行官员（伯南克）+ 标准教材（曼昆/米什金）</td><td>财经短视频衍生书</td></tr>
+    <tr><td>套利书</td><td>交易所/券商固收/量化基金从业者 + 金融工程教材（Hull/张维）</td><td>"一年十倍""稳赚翻倍"类书名</td></tr>
+    <tr><td>基金/配置书</td><td>马尔基尔、博格、博迪</td><td>择时神书、荐股书</td></tr>
+  </table>
+  <p><b>你的奖项表的正确用法</b>：先查作者是否获奖、是否在国发院/国研中心/央行/CF40/社科院，再决定读不读——这是质量过滤器，质量下限高。</p>
+  <p><b>出版日期的用法</b>：政策类书（货币、监管）距今越近越好，超过5年的只取框架；教材永远买最新版次；数据类（西格尔、伟大的博弈）只读数据更新过的版次；理论经典若被删，用新版替代品补位（如用《漫步华尔街》替代《聪明的投资者》的入门功能）。</p>
+</section>
+
+<section class="card" id="s7">
+  <h2>七、五阶段阅读路径（个人自由读）</h2>
+  <table>
+    <tr><th>阶段</th><th>时长</th><th>读什么</th><th>产出标准</th></tr>
+    <tr><td>1. 建立宏观地图</td><td>3–6个月</td><td>曼昆宏观 → 米什金货币金融学 → 高善文/张明/高瑞东选一 → 《读懂中国金融》→ 伍戈李斌</td><td>能自己写"GDP、CPI、社融、PPI、利率、汇率、财政赤字"月度跟踪表</td></tr>
+    <tr><td>2. 政策与机构视角</td><td>3个月</td><td>CF40 年度书单泛读 → 余永定/管涛汇率 → 彭文生金融周期 → 黄奇帆结构改革 → 国研中心发展报告一本</td><td>知道货币政策、监管、产业政策出台会如何影响股债汇</td></tr>
+    <tr><td>3. 资产与组合</td><td>3个月</td><td>博迪投资学 → 马尔基尔漫步华尔街 → 达摩达兰估值 → 《金钱心理学》</td><td>建立股、债、黄金、REITs、现金的配置比例框架</td></tr>
+    <tr><td>4. 套利专项（分叉）</td><td>按兴趣</td><td>偏低风险：低风险套利实战→稳赚→可转债专题→ETF折溢价实盘；偏量化：金志宏→Chan→Python回测→Hull期权；偏宏观交易：Hull期货+伍戈+管涛+期限结构</td><td>每条线至少一个能写清逻辑与风控的策略</td></tr>
+    <tr><td>5. 风控与心理（贯穿）</td><td>长期</td><td>《噪声》+《金钱心理学》+ 交易日志</td><td>每策略有回撤、胜率、成本、止损记录</td></tr>
+  </table>
+  <p><b>精读优先五本</b>：《置身事内》《漫步华尔街》《投资最重要的事》《期权、期货及其他衍生品》《手把手教你读财报》，其余泛读建立索引。</p>
+</section>
+
+<section class="card" id="s8">
+  <h2>八、两条防坑提醒</h2>
+  <ol>
+    <li><b>只读第 1–3 层</b>：懂宏观但不会下单，成了"宏观名词收藏家"；<b>只读第 4–6 层</b>：懂方法但水土不服，在政策拐点上挨打。每读一本宏观书，配一本市场书（如彭文生 + 邱国鹭）。</li>
+    <li><b>时效注意</b>：货币政策、监管类书籍出版即"旧"，读框架不读结论；结论用 CF40/《比较》和首席月报持续更新。</li>
+  </ol>
+</section>
+
+<section class="card" id="s9">
+  <h2>九、免费正版获取指南</h2>
+  <div class="warn">书单中的图书绝大多数在版权保护期内，网上的"免费PDF"基本为盗版，不建议使用（质量差、错页、有安全风险）。以下是<b>合法且免费</b>的获取途径，其中一部分已直接下载到本地。</div>
+
+  <h3>9.1 官方免费，已下载到本地（见"免费正版资源"文件夹）</h3>
+  <table>
+    <tr><th>文件</th><th>官方来源</th></tr>
+    <tr><td>巴菲特致股东的信（2024年信，英文官方版）</td><td><a href="https://www.berkshirehathaway.com/letters/2024ltr.pdf">berkshirehathaway.com/letters/2024ltr.pdf</a></td></tr>
+    <tr><td>巴菲特致股东的信（2023年信，英文官方版）</td><td><a href="https://www.berkshirehathaway.com/letters/2023ltr.pdf">berkshirehathaway.com/letters/2023ltr.pdf</a></td></tr>
+    <tr><td>巴菲特致股东的信（2014年信·50周年纪念，英文官方版）</td><td><a href="https://www.berkshirehathaway.com/letters/2014ltr.pdf">berkshirehathaway.com/letters/2014ltr.pdf</a></td></tr>
+  </table>
+  <p>伯克希尔官网（<a href="https://www.berkshirehathaway.com/letters/letters.html">letters.html</a>）免费提供 <b>1977 年至今全部年度股东信</b>，这是第4层《巴菲特致股东的信》的原始免费素材，对应中文书只是选编，读原信免费且更全。</p>
+
+  <h3>9.2 官方免费，网页/注册获取</h3>
+  <table>
+    <tr><th>资源</th><th>地址</th><th>对应书单</th></tr>
+    <tr><td>达利欧《经济机器是怎样运行的》30分钟视频 + 债务危机模板</td><td><a href="https://www.economicprinciples.org">economicprinciples.org</a>（免费注册可下载《债务危机》英文模板PDF）</td><td>2.3《债务危机》</td></tr>
+    <tr><td>伯南克"美联储与金融危机"系列讲座（美联储官方免费）</td><td><a href="https://www.federalreserve.gov/outreach.htm">federalreserve.gov/outreach.htm</a></td><td>2.3《金融的本质》</td></tr>
+    <tr><td>CF40 全部课题报告与年度报告</td><td><a href="https://www.cf40.org.cn">cf40.org.cn</a></td><td>2.2 机构系全部</td></tr>
+    <tr><td>吴敬琏主编《比较》辑刊（官网部分文章免费）</td><td><a href="https://www.bijiao.org">bijiao.org</a></td><td>2.4 "活水"</td></tr>
+    <tr><td>IMF 汇率制度年报 AREAER（免费数据库+PDF）</td><td><a href="https://www.elibrary-areaer.imf.org">elibrary-areaer.imf.org</a></td><td>4.3 跨境套利</td></tr>
+    <tr><td>中金所/上期所投教专区（期权期货规则手册）</td><td><a href="http://www.cffex.com.cn">cffex.com.cn</a> / <a href="https://www.shfe.com.cn">shfe.com.cn</a></td><td>4.3 套利</td></tr>
+  </table>
+
+  <h3>9.3 低成本正版渠道（合法"白嫖"）</h3>
+  <ol>
+    <li><b>图书馆电子借阅（完全免费）</b>：国家图书馆、所在省市图书馆办读者卡后，用"藏书馆"App 或图书馆官方 App 免费借阅大部分书单图书的电子版；</li>
+    <li><b>微信读书</b>：书单中的畅销书（《置身事内》《债务危机》《思考，快与慢》《金钱心理学》等）基本都有正版电子书，会员或赠币可低成本读；</li>
+    <li><b>得到/京东读书/豆瓣阅读电子书会员</b>：包月价远低于单本纸质书；</li>
+    <li><b>多抓鱼/孔夫子旧书网二手书</b>：理论经典和教材的老版次二手价通常不到定价 3 折，教材只买最新版次；</li>
+    <li><b>券商/基金 App 的投教专区</b>：免费研报与课程，替代部分套利入门书（如可转债、ETF 专题用券商研报比买书更新）。</li>
+  </ol>
+</section>
+
+<section class="card" id="s10">
+  <h2>附：按"2008年前初版"过滤删除的书籍备查</h2>
+  <p class="muted">《中国的奇迹》(1994)、《非均衡的中国经济》(1990)、《农业与工业化》(1945/1984)、《美国货币史》(1963)、《通货膨胀目标制》(1999)、《大萧条》(2000)、《稳定不稳定的经济》(1986)、《投资者与市场》(夏普，2006)、《聪明的投资者》(1949)、《怎样选择成长股》(1958)、《赢家的诅咒》(1992)、《机构投资的创新之路》(2000)、《不落俗套的成功》(2005)、《有效资产管理》(2000)、《穷查理宝典》(2005)、《Statistical Arbitrage》(Pole，2007)、《通往财务自由之路》(撒普，1998)、《机械交易系统》(2004)、《金融工程原理：无套利均衡分析》(宋逢明，1999)。</p>
+  <p class="muted">若日后想补理论根基，可随时把这些加回。</p>
+</section>
+
+<footer>投资理财知识体系与书单 · 生成于 2026-09-25 · 个人学习使用</footer>
+</div>
+</body>
+</html>
